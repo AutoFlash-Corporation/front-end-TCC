@@ -1,0 +1,40 @@
+/* logo.module.css */
+.container_logo {
+  display: flex;                
+  align-items: center;   
+  flex-direction: column;      
+  justify-content: center;                        
+  margin-top: 10px;   
+  width: 50px;
+  height: 50px;          
+}
+
+.title {
+  color: white;
+  font-size: 15px;             
+  font-family: 'prompt', sans-serif; 
+  margin-top: 1px;
+  font-weight: normal;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+}
+
+
+
+@media (max-width: 360px) { /* Para smartphones menores */
+  .title {
+      font-size: 5px; /* Tamanho da fonte ainda menor */
+  }
+
+  .container_logo {
+      margin-top: 1px; /* Ajustar a margem superior se necessário */
+  }
+
+  .logo {
+    width: 20px; /* Ajustar o tamanho da logo */
+    height: 20px;
+  }
+}

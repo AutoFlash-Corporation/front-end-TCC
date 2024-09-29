@@ -1,0 +1,63 @@
+/* Contêiner principal que engloba os cards */
+.card_container {
+    display: flex;                      /* Exibe o contêiner como flex */
+    flex-direction: column;             /* Empilha os elementos verticalmente */
+    align-items: center;                /* Centraliza os elementos no eixo horizontal */
+    justify-content: center;            /* Centraliza no eixo vertical */
+    position: absolute;                 /* Centraliza a posição no meio da tela */
+    top: 50%;                           /* Centraliza verticalmente */
+    left: 52%;                          /* Centraliza horizontalmente */
+    transform: translate(-50%, -50%);   /* Centraliza no meio da tela */
+    width: auto;        
+    margin-top: 10px;     
+}
+
+/* Cards front e back separados */
+.card_front, .card_back {
+
+    display: flex;                      /* Torna o card um contêiner flexível */
+    align-items: center;                /* Centraliza verticalmente o conteúdo */
+    justify-content: space-around;      /* Espaço igual entre os itens */
+    background-color: rgba(245, 245, 245, 1);
+    width: 1262px;
+    height: 165px;
+    border-radius: 20px;
+    padding: 20px;                      /* Adiciona padding interno */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra leve */
+    margin-bottom: 20px;  
+    overflow-y: auto;
+}
+
+.subtitle {
+    font-family: Montserrat;
+    font-size: 16px;
+    font-weight: 450;
+    color: rgba(125, 125, 125, 1);
+    margin-bottom: 15px;
+    margin-left: -1180px;
+}
+
+/* Media Query para telas de até 768px */
+@media (max-width: 768px) {
+    .card_front, .card_back {
+        width: 80%;                     /* Ajusta a largura para 80% da tela */
+        height: auto;                   /* Altura ajustada automaticamente */
+    }
+}
+
+/* Media Query para telas de até 480px */
+@media (max-width: 480px) {
+    .card_front, .card_back {
+        width: 70%;                     /* Ocupa quase toda a tela */
+        height: auto;                   /* Altura ajustada automaticamente */
+    }
+}
+
+/* Media Query para telas de até 360px */
+@media (max-width: 360px) {
+    .card_front, .card_back {
+        width: 80%;                     /* Ajusta a largura para telas menores */
+        height: auto;                   /* Altura ajustada automaticamente */
+        margin-bottom: 15px;            /* Reduz o espaçamento entre os cards */
+    }
+}

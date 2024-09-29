@@ -1,0 +1,9 @@
+.title {
+    display: flex;                      /* Exibe o contêiner como flex */
+        flex-direction: column;             /* Empilha os elementos verticalmente */
+        align-items: center;                /* Centraliza os elementos no eixo horizontal */
+        justify-content: center;            /* Centraliza no eixo vertical */
+        position: absolute; 
+        top: 10%;
+        left: 20%; 
+    }
