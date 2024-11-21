@@ -72,7 +72,7 @@ function LoginForm() {
 
             <p>
               Ainda não possui uma conta?{" "}
-              <a href="/forgot-password" className={styles.linkSingup}>
+              <a href="/register/" className={styles.linkSingup}>
                 Registre-se
               </a>
             </p>
