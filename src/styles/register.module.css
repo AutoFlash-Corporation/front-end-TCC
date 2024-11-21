@@ -1,0 +1,26 @@
+.Background {
+    position: fixed;
+    background: url("../image/Wallpaper_3.jpg");
+    background-size: cover;
+    width: 1390px; 
+    aspect-ratio: 16/9;
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-top: 10px;
+}
+
+.inputLabel {
+    height: 22px;   
+    width: 81px;
+    color:  rgb(152, 150, 150);
+    font-family: "Montserrat-Regular", Helvetica;
+    font-size: 20px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0;
+    line-height: 31px;
+    top: 0;
+    white-space: nowrap;
+    width: 81px;
+    margin-bottom: 10px;
+}
