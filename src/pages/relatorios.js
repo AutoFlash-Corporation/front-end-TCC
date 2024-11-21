@@ -4,7 +4,7 @@ import Cookies from "js-cookie";
 import Loading from "../component/Loading"; // Ajuste o caminho se necessário
 import Menu from "@/component/Menu";
 
-const Home = () => {
+const RelatoriosPage = () => {
   const router = useRouter();
   const [authChecked, setAuthChecked] = useState(false); // Apenas para verificar a autenticação
 
@@ -31,4 +31,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default RelatoriosPage;

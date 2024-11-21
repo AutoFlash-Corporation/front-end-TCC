@@ -1,0 +1,78 @@
+.menu {
+    display: flex;
+    color: white;
+    flex-direction: column;
+    align-items: center;
+    border-radius: 20px;
+    margin-left: -8px;
+    margin-top: 25px;
+    width: 70px;
+    height: 650px;
+    background-color: rgba(4, 96, 217, 0.80);
+    padding: 15px 10px;
+    position: relative; /* Para posicionar a barra ativa */
+  }
+  
+  .buttons {
+    margin-top: 130px; /* Ajuste na margem superior */
+    position: relative; /* Necessário para a barra ativa */
+  }
+  
+  /* Estilo da barra ativa */
+  .activeBar {
+    position: absolute;
+    left: 0px; /* Alinha a barra à esquerda dos botões */
+    width: 3px; /* Largura da barra */
+    height: 70px; /* Altura da barra */
+    background-color: white; /* Cor da barra */
+   
+  }
+  
+  .button {
+    display: flex; /* Usa flexbox para alinhar ícone e texto */
+    flex-direction: column; /* Coloca o ícone em cima do texto */
+    align-items: center; /* Centraliza o conteúdo do botão */
+    width: 80px;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background-color: transparent;
+    color: rgba(4, 96, 217, 1);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cor */
+  }
+  
+  .button svg {
+    font-size: 25px; /* Tamanho do ícone */
+    margin-bottom: 18px; /* Adiciona espaço entre o ícone e o texto */
+  }
+  
+  .link {
+    text-decoration: none; /* Remove sublinhado do link */
+  }
+  
+  .active {
+    align-items: center;
+    color: white; /* Cor do texto quando ativo */
+  }
+  
+  @media (max-width: 360px) {
+    .menu {
+      width: 50px; /* Ajusta a largura para telas menores que 360px */
+      height: 400px; /* Ajusta a altura para telas menores */
+    }
+  
+    .button {
+      width: 50px; /* Ajusta a largura dos botões */
+      padding: 5px; /* Diminui o padding dos botões */
+      margin-bottom: 8px; /* Diminui o espaço entre os botões */
+    }
+  
+    .button svg {
+      font-size: 16px; /* Diminui o tamanho do ícone */
+    }
+  }
+  
+  
+  
