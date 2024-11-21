@@ -2,7 +2,6 @@ import React from "react";
 import Link from "next/link";
 import Header from "@/component/Header";
 import styles from "../app/page.module.css";
-impo
 
 export default function Home() {
   return (

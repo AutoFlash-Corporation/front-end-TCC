@@ -1,44 +1,34 @@
-// pages/home.js
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
+import Cookies from "js-cookie";
+import Loading from "../component/Loading"; // Ajuste o caminho se necessário
 
-const Home = ({ isAuthenticated }) => {
+const Home = () => {
   const router = useRouter();
+  const [authChecked, setAuthChecked] = useState(false); // Apenas para verificar a autenticação
 
-  if (!isAuthenticated) {
-    // Redireciona para a página de login se não estiver autenticado
-    router.push("/login");
-    return null; // Impede o carregamento da página
+  useEffect(() => {
+    const accessToken = Cookies.get("access");
+
+    if (!accessToken) {
+      console.warn("Token de acesso ausente. Redirecionando para login...");
+      router.push("/login");
+    } else {
+      setAuthChecked(true); // Concluiu a verificação e está autenticado
+    }
+  }, [router]);
+
+  // Enquanto a verificação não foi concluída, exibe o Loading
+  if (!authChecked) {
+    return <Loading />;
   }
 
   return (
     <div>
-      <main>
-        <h1>Bem-vindo à Home!</h1>
-        <p>Você está logado e foi redirecionado para a página inicial.</p>
-      </main>
+      <h1>Bem-vindo à Home!</h1>
+      <p>Você está autenticado!</p>
     </div>
   );
 };
-
-export async function getServerSideProps(context) {
-  // Verifica se o token está nos cookies
-  const token = context.req.cookies.token;
-
-  if (!token) {
-    return {
-      redirect: {
-        destination: "/login",
-        permanent: false,
-      },
-    };
-  }
-
-  return {
-    props: {
-      isAuthenticated: true,
-    },
-  };
-}
 
 export default Home;
