@@ -1,0 +1,11 @@
+.Background {
+    position: fixed;
+    background: url("../image/Wallpaper_1.jpg");
+    background-size: cover;
+    width: 1390px; 
+    aspect-ratio: 16/9;
+    margin-left: 100px;
+    margin-right: 50px;
+    margin-top: 10px;
+  }
+  

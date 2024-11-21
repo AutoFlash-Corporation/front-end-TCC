@@ -1,23 +1,34 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import { loginUser } from "../utils/api";
 import styles from "../styles/login.module.css";
-import logo from "../image/logo.png";
 
 function LoginForm() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
-  const [error] = useState("");
+  const [error, setError] = useState(""); // Para mostrar erro
+  const router = useRouter();
 
   const handleLogin = async (event) => {
     event.preventDefault();
 
     try {
       const response = await loginUser(username, password);
-      //Retorno da API
-      console.log("Resposta da API:", response);  // Verifique o formato da resposta
-      console.log("Login bem-sucedido!", response.data);
+      
+      // Verifique a estrutura da resposta da API
+      console.log("Resposta completa da API:", response);
+
+      // Agora, dependendo do formato da resposta, altere o código para acessar corretamente o token
+      if (response.status === 200 && response.data && response.data.token) {
+        const token = response.data.token;
+        localStorage.setItem("token", token); // Salva o token no localStorage
+        router.push("/home"); // Redireciona para a página home
+      } else {
+        setError("Erro ao fazer login, tente novamente.");
+      }
     } catch (error) {
-      console.error("Erro ao fazer login!", error);
+      console.error("Erro ao fazer login:", error);
+      setError("Erro ao fazer login. Tente novamente.");
     }
   };
 
@@ -25,16 +36,14 @@ function LoginForm() {
     <div>
       <div className={styles.Logo}>
         <div className={styles.LogoGroup}>
-          <div className={styles.LogoLink}>
-          </div>
+          <div className={styles.LogoLink}></div>
         </div>
       </div>
 
       <div className={styles.LoginGroup}>
-        <h1>Bem vindo de volta!</h1>
-        {error && <p style={{ color: "red" }}>{error}</p>}
+        <h1>Bem-vindo de volta!</h1>
+        {error && <p style={{ color: "red" }}>{error}</p>} {/* Exibe o erro, se houver */}
         <form onSubmit={handleLogin}>
-          <div className={styles.LoginGroup}></div>
           <div className={styles.inputGroup}>
             <label htmlFor="username" className={styles.inputLabel}>
               Usuário:
