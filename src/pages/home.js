@@ -5,6 +5,8 @@ import Loading from "../component/Loading"; // Ajuste o caminho se necessário
 import Menu from "@/component/Menu";
 import SearchBar from "../component/SearchBar"; // Importando a barra de pesquisa
 import style from "@/styles/home.module.css";
+import MyCalendar from "@/component/Calendar";
+
 
 const Home = () => {
   const router = useRouter();
@@ -56,9 +58,13 @@ const Home = () => {
       <Menu />
       
       <div className={style.Background}>
-        <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2> {/* Exibe "Bem-vindo!" ou "Bem-vindo, [nome]" */}
+        <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2> 
+        <MyCalendar />
       </div>
 
+    </div>
+    <div>
+      
     </div>
     </div>
   );
