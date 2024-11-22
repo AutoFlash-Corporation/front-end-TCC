@@ -4,32 +4,40 @@ import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation"; // Use `usePathname` para capturar a rota
 import styles from "../styles/menu.module.css";
-import logo from "../image/logo.png";
+
 import { PiSquaresFourLight } from "react-icons/pi";
 import { IoPricetagOutline, IoFolderOpenOutline } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
 
 export default function Menu() {
   const [activeButton, setActiveButton] = useState("");
-  const pathname = usePathname(); // Utiliza `usePathname` ao invés de `useRouter`
+  const pathname = usePathname(); // Captura a rota atual
 
   // Atualiza o estado do botão ativo com base na rota
   useEffect(() => {
     switch (pathname) {
-      case "/Initial":
+      case "/home":
         setActiveButton("Home");
         break;
-      case "/Card":
+      case "/card":
         setActiveButton("Card");
         break;
-      case "/Content":
-        setActiveButton("Conteúdos");
+      case "/autocard":
+        setActiveButton("Autocard");
         break;
-      case "/Reports":
+      case "/conteudos":
+        setActiveButton("Conteúdos");
+        break;
+      case "/revisao":
+        setActiveButton("Revisão");
+        break;
+      case "/relatorios":
         setActiveButton("Relatórios");
         break;
+      default:
+        setActiveButton(""); // Reseta se nenhuma rota é encontrada
     }
-  }, [pathname]); // Atualiza quando o `pathname` muda
+  }, [pathname]);
 
   // Componentização dos botões do menu
   const MenuButton = ({ href, label, icon, name }) => (
@@ -46,13 +54,15 @@ export default function Menu() {
 
   return (
     <div className={styles.menu}>
-        <image src={logo} alt="Logo" width={60} height={60}/>
 
       <div className={styles.buttons}>
         {/* Barrinha que acompanha o botão ativo */}
         <div
           className={styles.activeBar}
-          style={{ top: getBarPosition(activeButton) }}
+          style={{
+            transform: `translateY(${getBarPosition(activeButton)}px)`,
+            transition: "transform 0.3s ease-in-out", // Adiciona animação suave
+          }}
         />
 
         {/* Botões do menu */}
@@ -69,15 +79,27 @@ export default function Menu() {
           name="Card"
         />
         <MenuButton
-          href="/conteudos"
-          label="Conteúdos"
+          href="/autocard"
+          label="Autocard"
           icon={<IoFolderOpenOutline />}
-          name="Conteúdos"
+          name="Autocard"
+        />
+        <MenuButton
+          href="/conteudos"
+          label="Conteúdos"
+          icon={<BsFileText />}
+          name="Conteúdos"
+        />
+        <MenuButton
+          href="/revisao"
+          label="Revisão"
+          icon={<BsFileText />}
+          name="Revisão"
         />
         <MenuButton
           href="/relatorios"
           label="Relatórios"
-          icon={<BsFileText />}
+          icon={<IoFolderOpenOutline />}
           name="Relatórios"
         />
       </div>
@@ -85,17 +107,22 @@ export default function Menu() {
   );
 }
 
-// Função para calcular a posição da barra com base no botão ativo usando if/else
+// Função para calcular a posição da barra dinamicamente
 function getBarPosition(button) {
-
   switch (button) {
     case "Home":
-      return "7px"; // Posição para Home
+      return 7; // Posição para Home
     case "Card":
-      return "97px"; // Posição para Card
-    case "Conteúdos":
-      return "190px"; // Posição para Conteúdos
+      return 72; // Posição para Card
+    case "Autocard":
+      return 142; // Posição para Autocard
+    case "Conteúdos":
+      return 204; // Posição para Conteúdos
+    case "Revisão":
+      return 272; // Posição para Revisão
     case "Relatórios":
-      return "285px"; // Posição para Relatórios
+      return 342; // Posição para Relatórios
+    default:
+      return 0; // Posição padrão
   }
 }

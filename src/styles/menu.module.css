@@ -14,7 +14,7 @@
   }
   
   .buttons {
-    margin-top: 130px; /* Ajuste na margem superior */
+    margin-top: 80px; /* Ajuste na margem superior */
     position: relative; /* Necessário para a barra ativa */
   }
   
@@ -23,7 +23,7 @@
     position: absolute;
     left: 0px; /* Alinha a barra à esquerda dos botões */
     width: 3px; /* Largura da barra */
-    height: 70px; /* Altura da barra */
+    height: 50px; /* Altura da barra */
     background-color: white; /* Cor da barra */
    
   }
@@ -40,7 +40,7 @@
     background-color: transparent;
     color: rgba(4, 96, 217, 1);
     cursor: pointer;
-    transition: background-color 0.3s ease, color 0.3s ease; /* Transição suave de cor */
+    transition: background-color 0.1s ease, color 0.3s ease; /* Transição suave de cor */
   }
   
   .button svg {
