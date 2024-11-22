@@ -8,6 +8,10 @@ import style from "@/styles/home.module.css";
 import MyCalendar from "@/component/Calendar";
 import Logo from "@/component/Logo";
 import ShowBox from "@/component/ShowBox";
+import { FaPeopleGroup } from "react-icons/fa6";
+import { IoPersonAdd } from "react-icons/io5";
+import { IoWallet } from "react-icons/io5";
+import { IoPaperPlaneSharp } from "react-icons/io5";
 
 const Home = () => {
   const router = useRouter();
@@ -64,10 +68,34 @@ const Home = () => {
           </header>
 
           <main>
-            <ShowBox />
-            <ShowBox />
-            <ShowBox />
-            <ShowBox />
+          <ShowBox
+                icon={<FaPeopleGroup />}
+                title="Total de cards"
+                value="5 234"
+                description="Ver todos"
+                link="/card"
+            />
+            <ShowBox
+                icon={<IoPersonAdd />}
+                title="Cards revisados hoje"
+                value="150"
+                description="Ver todos"
+                link="/card"
+            />
+            <ShowBox
+                icon={<IoWallet />}
+                title="Previsão para amanhã"
+                value="98"
+                description="Ver Cards"
+                link="/card"
+            />
+            <ShowBox
+                icon={<IoPaperPlaneSharp />}
+                title="Conteúdos"
+                value="15"
+                description="Ver todos"
+                link="/card"
+            />
           </main>
           <MyCalendar />
         </div>

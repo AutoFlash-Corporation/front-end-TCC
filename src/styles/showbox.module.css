@@ -1,13 +1,65 @@
-.ShowBoxGroup {
-  display: flex;
-  justify-content: center;
+.showbox {
+  display: grid;
   padding: 24px;
   gap: 10px;
   border-radius: 8px;
   background: #fff;
   width: 250px;
-  height: 150px;
+  height: 100px;
   margin-left: 15px;
   margin-bottom: 15px;
   margin-top: -30px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Adiciona sombra para destacar os cards */
+  text-align: left; /* Centraliza o conteúdo */
+}
+
+.icon {
+  font-size: 24px;
+  display: flex;
+  align-items: left;
+  color: #5A67D8; /* Cor do ícone */
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-left: 40px;
+  line-height: 8px;
+}
+
+.content h3 {
+  margin-top: -25px;
+  font-size: 20px;
+  color: #2D3748;
+}
+
+.value {
+  font-size: 22px;
+  font-weight: bold;
+  color: #1A202C;
+  margin: 8px 0;
+}
+
+.description {
+  font-size: 14px;
+  color: #4A5568;
+}
+
+.arrow {
+  font-size: 24px;
+  color: #7B57E0;
+  margin-left: 65px;
+  margin-top: -15px;
+}
+
+.link {
+  text-decoration: none;
+  margin-top: 30px;
+  margin-left: -35px;
+  color:#7B57E0;
+  font-family: Prompt;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
 }
