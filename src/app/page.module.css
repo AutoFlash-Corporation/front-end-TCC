@@ -77,14 +77,16 @@
 }
 
 .backgroundSecao2 {
-  width: 100%;
-  height: 577px;
-  flex-shrink: 0;
+  display: flex; /* Ativar flexbox */
+  justify-content: center;
 
+  width: 100%;
+  height: 624px;
+  flex-shrink: 0;
   background: #f2f2f2;
 }
 
-.Secao2Group h2 {
+.Secao2Title {
   color: #2f281e;
   text-align: center;
   font-family: Montserrat;
@@ -92,6 +94,7 @@
   font-style: normal;
   font-weight: 800;
   line-height: normal;
+  margin-left: 35px;
 }
 
 .BlankSpace1 {
@@ -101,8 +104,8 @@
 
   background: #bb6bd9;
 
-  margin-left: 695;
-  margin-top: -25px;
+  margin-left: 638;
+  margin-top: -20px;
 }
 
 .Secao2CardsGroup {
@@ -114,9 +117,15 @@
 .Secao2Card {
   width: 300px;
   height: 600px;
-  margin-top: 35%;
+  margin-top: 15%;
   margin-left: 50px;
   flex-shrink: 0;
+}
+
+.Secao2CardSvg {
+  margin-bottom: 50px;
+  width: 60px;
+  height: 60px;
 }
 
 .Secao2Card h3 {
@@ -151,6 +160,32 @@
 
 .Secao2Card a:hover {
   color: #bb6bd9;
+}
+
+.singupButton2 {
+  width: 220px;
+  height: 64px;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #bb6bd9;
+  color: #fff;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-weight: 800;
+  line-height: normal;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); /* Adicionar leve sombra */
+  transition: background 0.3s ease; /* Animação para hover */
+  margin-top: 520px;
+  margin-left: -796px;
+  border: 1px solid rgba(187, 107, 217, 1);
+  box-shadow: 0.8px 5px 0px rgba(125, 6, 129, 0.836);
+  transition: background 0.3s ease, transform 0.2s ease;
+  cursor: pointer;
+}
+
+.singupButton2:hover {
+  background: var(--Purple-1, #a44fc9);
 }
 
 @keyframes landingPage {
