@@ -12,7 +12,6 @@
   display: grid;
   grid-template-columns: 10fr 4fr 1fr;
   padding-top: 15px;
-  padding-bottom: 25px;
 }
 
 .HeaderLink {
@@ -29,7 +28,7 @@
   justify-content: left;
   padding-top: 5px;
   margin-left: 40px;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 
 }
 
@@ -66,6 +65,7 @@
   text-align: center;
   font-family: Montserrat;
   font-size: 16px;
+  width: 110px;
   font-style: normal;
   padding: 12px 20px;
   cursor: pointer;

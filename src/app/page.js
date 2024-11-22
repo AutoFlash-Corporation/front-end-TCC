@@ -1,5 +1,4 @@
 import React from "react";
-import Link from "next/link";
 import Header from "@/component/Header";
 import styles from "../app/page.module.css";
 
@@ -21,11 +20,14 @@ export default function Home() {
           },
         ]}
       />
-
-      <div className={styles.linkWrapper}>
-        <Link href="/Login" className={styles.link}>
-          Login
-        </Link>
+      <div className={styles.background}>
+        <div className={styles.MainGroup}>
+          <h1>Otimize sua memorização</h1>
+          <p>Qualquer assunto, em qualquer hora, para todas as idades!</p>
+          <a href="/register/">
+            <button>Cadastre-se gratuitamente</button>
+          </a>
+        </div>
       </div>
     </div>
   );
