@@ -1,0 +1,13 @@
+.ShowBoxGroup {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+  gap: 10px;
+  border-radius: 8px;
+  background: #fff;
+  width: 250px;
+  height: 150px;
+  margin-left: 15px;
+  margin-bottom: 15px;
+  margin-top: -30px;
+}

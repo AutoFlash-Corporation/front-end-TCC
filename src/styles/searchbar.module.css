@@ -1,17 +1,15 @@
 .searchBar {
   display: flex;
-  align-items: center;
+  justify-content: center;
   margin: 20px;
   margin-top: 50px;
-  margin-bottom: -30px;
-  margin-left: 250px;
+  margin-bottom: -20px;
 }
 
 .searchInput {
   padding: 8px;
   font-size: 16px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
+  border: none;
   width: 649px;
   height: 20px;
   border-radius: 12px;

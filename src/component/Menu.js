@@ -54,7 +54,7 @@ export default function Menu() {
 
   return (
     <div className={styles.menu}>
-
+       
       <div className={styles.buttons}>
         {/* Barrinha que acompanha o botão ativo */}
         <div

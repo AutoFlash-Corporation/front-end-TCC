@@ -1,16 +1,25 @@
 .Background {
   width: 1276px;
-  height: 600px;
-  border-radius: 16px;
+  height: 635px;
+  border-top-left-radius: 16px;
+  border-top-right-radius: 16px;
   background: #f3f6fd;
   align-items: center;
   margin-left: 160px;
   margin-top: -600px;
+  display: grid;
+}
+
+.Background main {
+  display: grid;
+  grid-template-columns: 2fr 5fr 5fr 60fr;
+  justify-content: center;
+  margin-top: 50px;
 }
 
 .Background h2 {
+  display: fixed;
   padding-top: 20px;
-  display: flex;
   width: 600px;
   height: 29px;
   justify-content: center;

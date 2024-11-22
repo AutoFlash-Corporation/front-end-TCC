@@ -6,7 +6,8 @@ import Menu from "@/component/Menu";
 import SearchBar from "../component/SearchBar"; // Importando a barra de pesquisa
 import style from "@/styles/home.module.css";
 import MyCalendar from "@/component/Calendar";
-
+import Logo from "@/component/Logo";
+import ShowBox from "@/component/ShowBox";
 
 const Home = () => {
   const router = useRouter();
@@ -55,17 +56,23 @@ const Home = () => {
         ))}
       </div>
       <div>
-      <Menu />
-      
-      <div className={style.Background}>
-        <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2> 
-        <MyCalendar />
-      </div>
+        <Menu />
 
-    </div>
-    <div>
-      
-    </div>
+        <div className={style.Background}>
+          <header>
+            <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2>
+          </header>
+
+          <main>
+            <ShowBox />
+            <ShowBox />
+            <ShowBox />
+            <ShowBox />
+          </main>
+          <MyCalendar />
+        </div>
+      </div>
+      <div></div>
     </div>
   );
 };
