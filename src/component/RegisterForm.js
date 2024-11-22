@@ -1,6 +1,7 @@
 import { useState } from "react";
 import api from "../utils/api";
 import styles from "../styles/register.module.css";
+import { useRouter } from "next/router";
 
 function RegisterForm() {
   const [nome, setNome] = useState("");
@@ -9,6 +10,7 @@ function RegisterForm() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
   const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -36,7 +38,10 @@ function RegisterForm() {
   
     try {
       const response = await api.post("/register/", userData);
+      // Redirecionar para a página inicial
       console.log("Usuário cadastrado com sucesso", response.data);
+
+      router.push("/login");
     } catch (error) {
       console.error("Erro ao cadastrar usuário", error);
       setError("Erro ao cadastrar usuário, tente novamente.");
