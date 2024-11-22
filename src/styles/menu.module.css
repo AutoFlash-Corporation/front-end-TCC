@@ -5,9 +5,9 @@
     align-items: center;
     border-radius: 20px;
     margin-left: -8px;
-    margin-top: 25px;
-    width: 70px;
-    height: 650px;
+    margin-top: 50px;
+    width: 65px;
+    height: 550px;
     background-color: rgba(4, 96, 217, 0.80);
     padding: 15px 10px;
     position: relative; /* Para posicionar a barra ativa */
@@ -34,7 +34,7 @@
     align-items: center; /* Centraliza o conteúdo do botão */
     width: 80px;
     padding: 10px;
-    margin-bottom: 15px;
+    font-size: 14px;
     border: none;
     border-radius: 8px;
     background-color: transparent;
@@ -44,8 +44,8 @@
   }
   
   .button svg {
-    font-size: 25px; /* Tamanho do ícone */
-    margin-bottom: 18px; /* Adiciona espaço entre o ícone e o texto */
+    font-size: 24px; /* Tamanho do ícone */
+    margin-bottom: 5px; /* Adiciona espaço entre o ícone e o texto */
   }
   
   .link {

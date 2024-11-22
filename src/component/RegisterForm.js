@@ -12,25 +12,36 @@ function RegisterForm() {
 
   const handleRegister = async (event) => {
     event.preventDefault();
-
+  
+    // Validação de username
+    const usernamePattern = /^[A-Za-z0-9@._+-]+$/;
+    if (!usernamePattern.test(username)) {
+      setError("Username inválido. Ele deve conter apenas letras, números e @/./+/-/_.");
+      return;
+    }
+  
     if (password !== confirmPassword) {
       setError("Senhas não conferem");
       return;
     }
-
+  
+    const userData = {
+      username: username,
+      password: password,
+      email: email,
+      nome: nome,
+    };
+  
+    console.log("Dados enviados:", userData);
+  
     try {
-      const response = await api.post("register/", {
-        username: username,
-        password: password,
-        email: email,
-        nome: nome,
-      });
+      const response = await api.post("/register/", userData);
       console.log("Usuário cadastrado com sucesso", response.data);
     } catch (error) {
       console.error("Erro ao cadastrar usuário", error);
       setError("Erro ao cadastrar usuário, tente novamente.");
     }
-  };
+  };  
 
   return (
     <div className={styles.RegisterGroup}>

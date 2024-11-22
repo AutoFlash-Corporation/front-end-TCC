@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { useRouter } from "next/router";
 import { loginUser } from "../utils/auth";
 import Cookies from "js-cookie";
@@ -20,6 +20,7 @@ function LoginForm() {
       // Salvar tokens nos cookies
       Cookies.set("access", access, { expires: 1 }); // Expira em 1 dia
       Cookies.set("refresh", refresh, { expires: 7 }); // Expira em 7 dias
+      Cookies.set("userName", username, { expires: 1 }); // Salva o nome do usuário no cookie (expira em 1 dia)
 
       console.log("Login bem-sucedido, tokens salvos nos cookies.");
 
