@@ -13,40 +13,16 @@ import { IoPersonAdd } from "react-icons/io5";
 import { IoWallet } from "react-icons/io5";
 import { IoPaperPlaneSharp } from "react-icons/io5";
 
-const Home = () => {
-  const router = useRouter();
-  const [authChecked, setAuthChecked] = useState(false); // Verifica autenticação
-  const [userName, setUserName] = useState(""); // Nome do usuário
+import withAuth from "../utils/withAuth"
+
+const Home = ({ userName }) => {
   const [searchResults, setSearchResults] = useState([]); // Armazenando resultados da pesquisa
 
   // Função para lidar com a pesquisa
   const handleSearch = (query) => {
     console.log("Pesquisando:", query);
-    // Aqui você pode fazer uma busca em um banco de dados, API, ou filtrar os dados
-    // Exemplo simples:
     setSearchResults([`Resultado para: ${query}`]); // Simulação de resultado
   };
-
-  useEffect(() => {
-    const accessToken = Cookies.get("access");
-    const storedUserName = Cookies.get("userName"); // Obtém o nome do usuário do cookie
-
-    if (!accessToken) {
-      console.warn("Token de acesso ausente. Redirecionando para login...");
-      router.push("/login");
-    } else {
-      // Verifica se o nome de usuário existe no cookie
-      if (storedUserName) {
-        setUserName(storedUserName); // Define o nome do usuário
-      }
-      setAuthChecked(true); // Verificação concluída
-    }
-  }, [router]);
-
-  // Enquanto a verificação não foi concluída, exibe o Loading
-  if (!authChecked) {
-    return <Loading />;
-  }
 
   return (
     <div>
@@ -91,10 +67,10 @@ const Home = () => {
             />
             <ShowBox
                 icon={<IoPaperPlaneSharp />}
-                title="Conteúdos"
+                title="Total de conteúdos"
                 value="15"
                 description="Ver todos"
-                link="/card"
+                link="/conteudos"
             />
           </main>
           <MyCalendar />
@@ -105,4 +81,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default withAuth(Home);
