@@ -1,7 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { useRouter } from "next/router";
-import Cookies from "js-cookie";
-import Loading from "../component/Loading"; // Ajuste o caminho se necessário
+import React, { useState } from "react";
 import Menu from "@/component/Menu";
 import SearchBar from "../component/SearchBar"; // Importando a barra de pesquisa
 import style from "@/styles/home.module.css";
