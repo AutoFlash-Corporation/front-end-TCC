@@ -80,7 +80,7 @@
   display: flex; /* Ativar flexbox */
   justify-content: center;
 
-  width: 100%;
+  width: 1535px;
   height: 624px;
   flex-shrink: 0;
   background: #f2f2f2;
@@ -188,6 +188,43 @@
   background: var(--Purple-1, #a44fc9);
 }
 
+.backgroundSecao3 {
+  width: 1535px;
+  height: 634px;
+}
+
+.backgroundSecao4 {
+  width: 1535px;
+  height: 634px;
+  flex-shrink: 0;
+
+  background: rgba(177, 54, 247, 0.60);
+}
+
+.backgroundSecao5 {
+  width: 1535px;
+  height: 1268px;
+
+}
+
+.backgroundSecao6 {
+  width: 1535px;
+  height: 634px;
+ 
+  background: #BB6BD9;
+}
+
+.backgroundSecao7 {
+  width: 1535px;
+  height: 634px;
+}
+
+.backgroundSecao8 {
+  width: 1535px;
+  height: 500px;
+  margin-bottom: -15px;
+  background: #BB6BD9;
+}
 @keyframes landingPage {
   0% {
     opacity: 0;
