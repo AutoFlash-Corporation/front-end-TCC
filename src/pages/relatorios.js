@@ -3,10 +3,20 @@ import { useRouter } from "next/router";
 import Cookies from "js-cookie";
 import Loading from "../component/Loading"; // Ajuste o caminho se necessário
 import Menu from "@/component/Menu";
+import SearchBar from "@/component/SearchBar";
 
 const RelatoriosPage = () => {
   const router = useRouter();
   const [authChecked, setAuthChecked] = useState(false); // Apenas para verificar a autenticação
+  const [searchResults, setSearchResults] = useState([]); // Armazenando resultados da pesquisa
+
+  // Função para lidar com a pesquisa
+  const handleSearch = (query) => {
+    console.log("Pesquisando:", query);
+    // Aqui você pode fazer uma busca em um banco de dados, API, ou filtrar os dados
+    // Exemplo simples:
+    setSearchResults([`Resultado para: ${query}`]); // Simulação de resultado
+  };
 
   useEffect(() => {
     const accessToken = Cookies.get("access");
@@ -26,7 +36,19 @@ const RelatoriosPage = () => {
 
   return (
     <div>
-      <Menu />
+      {/* Barra de pesquisa */}
+      <SearchBar onSearch={handleSearch} />
+
+      {/* Exibindo os resultados da pesquisa */}
+      <div>
+        {searchResults.map((result, index) => (
+          <p key={index}>{result}</p>
+        ))}
+      </div>
+
+      <div>
+        <Menu />
+      </div>
     </div>
   );
 };

@@ -15,13 +15,20 @@ export default function Menu() {
 
   // Atualiza o estado do botão ativo com base na rota
   useEffect(() => {
-    const pathToButtonMap = {
-      "/Initial": "Home",
-      "/Card": "Card",
-      "/Content": "Conteúdos",
-      "/Reports": "Relatórios",
-    };
-    setActiveButton(pathToButtonMap[pathname] || "");
+    switch (pathname) {
+      case "/Initial":
+        setActiveButton("Home");
+        break;
+      case "/Card":
+        setActiveButton("Card");
+        break;
+      case "/Content":
+        setActiveButton("Conteúdos");
+        break;
+      case "/Reports":
+        setActiveButton("Relatórios");
+        break;
+    }
   }, [pathname]); // Atualiza quando o `pathname` muda
 
   // Componentização dos botões do menu
@@ -80,12 +87,15 @@ export default function Menu() {
 
 // Função para calcular a posição da barra com base no botão ativo usando if/else
 function getBarPosition(button) {
-  const positions = {
-    Home: "7px",
-    Card: "97px",
-    Conteúdos: "190px",
-    Relatórios: "285px",
-  };
 
-  return positions[button] || "0px"; // Posição padrão caso o botão não seja encontrado
+  switch (button) {
+    case "Home":
+      return "7px"; // Posição para Home
+    case "Card":
+      return "97px"; // Posição para Card
+    case "Conteúdos":
+      return "190px"; // Posição para Conteúdos
+    case "Relatórios":
+      return "285px"; // Posição para Relatórios
+  }
 }
