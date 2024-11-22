@@ -36,13 +36,13 @@
   transition: 1s cubic-bezier(0.2, 0.8, 0.2, 1);
 }
 
-.HeaderLink-singup:hover {
+.HeaderLinksingup:hover {
   background-color: rgb(220, 146, 247);
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
 }
 
-.HeaderLink-login:hover {
+.HeaderLinklogin:hover {
   background-color: white;
   box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
   transform: translateY(-3px);
@@ -57,7 +57,7 @@
   margin-top: 8px;
 }
 
-.HeaderLink-singup {
+.HeaderLinksingup {
   background-color: rgba(187, 107, 217, 1);
   color: white;
   border-radius: 4px;
@@ -74,7 +74,7 @@
   transition: background 0.3s ease, transform 0.2s ease;
 }
 
-.HeaderLink-login {
+.HeaderLinklogin {
   color: #979797;
   text-align: center;
   font-family: Montserrat;
