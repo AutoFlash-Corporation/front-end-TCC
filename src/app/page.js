@@ -1,8 +1,14 @@
 import React from "react";
+import Link from "next/link";
+import Image from "next/image";
+
 import Header from "@/component/Header";
+
+import logo from "../image/logo.svg";
+
 import styles from "../app/page.module.css";
 
-export default function Home() {
+export default function Home({ siteTitle = "AutoFlash", links = [] }) {
   return (
     <div className={styles.body}>
       <Header
@@ -164,7 +170,16 @@ export default function Home() {
 
       <div className={styles.backgroundSecao3}>Seçao 3</div>
 
-      <div className={styles.backgroundSecao4}>Seçao 4</div>
+      <div className={styles.backgroundSecao4}>
+        <div className={styles.header4}>
+        <div className={styles.HeaderLink}>
+          <Link href="/">
+            <Image src={logo} width={60} height={60} alt={`Logo do site ${siteTitle}`} />
+          </Link>
+          <h1>{siteTitle}</h1>
+        </div>
+        </div>
+      </div>
 
       <div className={styles.backgroundSecao5}>Seção 5</div>
 
@@ -172,7 +187,12 @@ export default function Home() {
 
       <div className={styles.backgroundSecao7}>Seção 7</div>
 
-      <div className={styles.backgroundSecao8}>Seção 8</div>
+      <div className={styles.backgroundFooter}>
+      <div>Redes sociais</div>
+      <div>Sobre</div>
+      <div>Termos e condições</div>
+      <div>copyright</div>
+      </div>
     </div>
   );
 }

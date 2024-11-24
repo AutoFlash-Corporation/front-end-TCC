@@ -198,20 +198,19 @@
   height: 634px;
   flex-shrink: 0;
 
-  background: rgba(177, 54, 247, 0.60);
+  background: rgba(177, 54, 247, 0.6);
 }
 
 .backgroundSecao5 {
   width: 1535px;
   height: 1268px;
-
 }
 
 .backgroundSecao6 {
   width: 1535px;
   height: 634px;
- 
-  background: #BB6BD9;
+
+  background: #bb6bd9;
 }
 
 .backgroundSecao7 {
@@ -219,12 +218,20 @@
   height: 634px;
 }
 
-.backgroundSecao8 {
+.backgroundFooter {
   width: 1535px;
   height: 500px;
   margin-bottom: -15px;
-  background: #BB6BD9;
+  background: #bb6bd9;
 }
+
+.HeaderLink {
+  display: grid;
+  grid-template-columns: 1fr 12fr;
+  justify-content: center;
+  margin-left: 80px;
+}
+
 @keyframes landingPage {
   0% {
     opacity: 0;
