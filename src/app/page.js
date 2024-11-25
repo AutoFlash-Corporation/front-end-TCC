@@ -172,12 +172,17 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
 
       <div className={styles.backgroundSecao4}>
         <div className={styles.header4}>
-        <div className={styles.HeaderLink}>
-          <Link href="/">
-            <Image src={logo} width={60} height={60} alt={`Logo do site ${siteTitle}`} />
-          </Link>
-          <h1>{siteTitle}</h1>
-        </div>
+          <div className={styles.HeaderLink}>
+            <Link href="/">
+              <Image
+                src={logo}
+                width={60}
+                height={60}
+                alt={`Logo do site ${siteTitle}`}
+              />
+            </Link>
+            <h1>{siteTitle}</h1>
+          </div>
         </div>
       </div>
 
@@ -188,10 +193,18 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
       <div className={styles.backgroundSecao7}>Seção 7</div>
 
       <div className={styles.backgroundFooter}>
-      <div>Redes sociais</div>
-      <div>Sobre</div>
-      <div>Termos e condições</div>
-      <div>copyright</div>
+        <div><p>Nos siga nas redes sociais:</p></div>
+        <div><h3>Sobre</h3> <li>Soluções</li></div>
+        <div>
+          <h3>Termos e condições</h3>
+          <li>Termos e Condições</li>
+          <li>Política de Privacidade</li>
+          <li>LGPD</li>
+          <li>Política de Inclusão e Acessibilidade</li>
+        </div>
+        <div className={styles.copyFooter}>
+          Copyright @ 2024, AutoFlash Todos os direitos preservados.
+        </div>
       </div>
     </div>
   );

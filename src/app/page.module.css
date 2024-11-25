@@ -225,6 +225,16 @@
   background: #bb6bd9;
 }
 
+.copyFooter {
+  color: #fff;
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  width: 364px;
+}
+
 .HeaderLink {
   display: grid;
   grid-template-columns: 1fr 12fr;
