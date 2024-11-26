@@ -107,6 +107,16 @@
   margin-left: 638;
   margin-top: -20px;
 }
+.BlankSpace2 {
+  width: 116px;
+  height: 8px;
+  flex-shrink: 0;
+
+  background: #bb6bd9;
+
+  margin-left: 708;
+  margin-top: -20px;
+}
 
 .Secao2CardsGroup {
   display: grid;
@@ -193,6 +203,16 @@
   height: 634px;
 }
 
+.Secao3Title {
+  color: #2f281e;
+  text-align: center;
+  font-family: Montserrat;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 800;
+  line-height: normal;
+  margin-left: 0px;
+}
 .backgroundSecao4 {
   width: 1535px;
   height: 634px;

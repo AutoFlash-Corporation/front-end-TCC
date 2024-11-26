@@ -7,6 +7,7 @@ import Header from "@/component/Header";
 import logo from "../image/logo.svg";
 
 import styles from "../app/page.module.css";
+import Carousel from "@/component/Carousel";
 
 export default function Home({ siteTitle = "AutoFlash", links = [] }) {
   return (
@@ -27,7 +28,7 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
         ]}
       />
 
-      <div className={styles.background}>
+      <div className={styles.background}> 
         <div className={styles.MainGroup}>
           <h1>Otimize sua memorização</h1>
           <p>Qualquer assunto, em qualquer hora, para todas as idades!</p>
@@ -168,7 +169,11 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
         </a>
       </div>
 
-      <div className={styles.backgroundSecao3}>Seçao 3</div>
+      <div className={styles.backgroundSecao3}>
+        <h2 className={styles.Secao3Title}>Benefícios da repetição espaçada</h2>
+        <div className={styles.BlankSpace2}></div>
+        <Carousel />
+      </div>
 
       <div className={styles.backgroundSecao4}>
         <div className={styles.header4}>
@@ -193,8 +198,12 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
       <div className={styles.backgroundSecao7}>Seção 7</div>
 
       <div className={styles.backgroundFooter}>
-        <div><p>Nos siga nas redes sociais:</p></div>
-        <div><h3>Sobre</h3> <li>Soluções</li></div>
+        <div>
+          <p>Nos siga nas redes sociais:</p>
+        </div>
+        <div>
+          <h3>Sobre</h3> <li>Soluções</li>
+        </div>
         <div>
           <h3>Termos e condições</h3>
           <li>Termos e Condições</li>
