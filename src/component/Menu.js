@@ -8,6 +8,8 @@ import styles from "../styles/menu.module.css";
 import { PiSquaresFourLight } from "react-icons/pi";
 import { IoPricetagOutline, IoFolderOpenOutline } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
+import { GiSpellBook } from "react-icons/gi";
+import { LuFolders } from "react-icons/lu";
 
 export default function Menu() {
   const [activeButton, setActiveButton] = useState("");
@@ -81,7 +83,7 @@ export default function Menu() {
         <MenuButton
           href="/autocard"
           label="Autocard"
-          icon={<IoFolderOpenOutline />}
+          icon={<GiSpellBook />}
           name="Autocard"
         />
         <MenuButton
@@ -93,13 +95,13 @@ export default function Menu() {
         <MenuButton
           href="/revisao"
           label="Revisão"
-          icon={<BsFileText />}
+          icon={<IoFolderOpenOutline />}
           name="Revisão"
         />
         <MenuButton
           href="/relatorios"
           label="Relatórios"
-          icon={<IoFolderOpenOutline />}
+          icon={<BsFileText />}
           name="Relatórios"
         />
       </div>

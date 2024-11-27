@@ -173,6 +173,8 @@ export default function Home({ siteTitle = "AutoFlash", links = [] }) {
         <h2 className={styles.Secao3Title}>Benefícios da repetição espaçada</h2>
         <div className={styles.BlankSpace2}></div>
         <Carousel />
+        <h3 className={styles.Secao3Title}>Pronto para começar?</h3>
+        <p>Vamos nessa!</p>
       </div>
 
       <div className={styles.backgroundSecao4}>
