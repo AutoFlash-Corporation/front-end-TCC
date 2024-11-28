@@ -27,19 +27,19 @@
 
 
 .emblaSlide:nth-child(1) {
-    background: #0460D9;
+    background: #70d6ff;
 }
 
 .emblaSlide:nth-child(2) {
-    background-color: blue;
+    background-color: #ff70a6;
 }
 
 .emblaSlide:nth-child(3) {
-    background-color: red;
+    background-color: #ff9770;
 }
 
 .emblaSlide:nth-child(4) {
-    background-color: green;
+    background-color: #ffd670;
 }
 
 .emblaSlide:nth-child(5) {
@@ -47,7 +47,7 @@
 }
 
 .emblaSlide:nth-child(6) {
-    background-color: orange;
+    background-color: #e9ff70;
 }
 
 
