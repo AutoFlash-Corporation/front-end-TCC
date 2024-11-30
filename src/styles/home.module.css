@@ -3,7 +3,7 @@
   height: 635px;
   border-top-left-radius: 16px;
   border-top-right-radius: 16px;
-  background: #f3f6fd;
+  background: #e9effe;
   align-items: center;
   margin-left: 160px;
   margin-top: -600px;
@@ -31,4 +31,6 @@
   font-style: normal;
   font-weight: 500;
   line-height: normal;
+  margin-left: -105px;
+  margin-bottom: -15px;
 }
