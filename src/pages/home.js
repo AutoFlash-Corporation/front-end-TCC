@@ -39,38 +39,6 @@ const Home = ({ userName }) => {
           <header>
             <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2>
           </header>
-
-          <main>
-          <ShowBox
-                icon={<FaPeopleGroup />}
-                title="Total de cards"
-                value="5 234"
-                description="Ver todos"
-                link="/card"
-            />
-            <ShowBox
-                icon={<IoPersonAdd />}
-                title="Cards revisados hoje"
-                value="150"
-                description="Ver todos"
-                link="/card"
-            />
-            <ShowBox
-                icon={<IoWallet />}
-                title="Previsão para amanhã"
-                value="98"
-                description="Ver Cards"
-                link="/card"
-            />
-            <ShowBox
-                icon={<IoPaperPlaneSharp />}
-                title="Total de conteúdos"
-                value="15"
-                description="Ver todos"
-                link="/conteudos"
-            />
-          </main>
-          <MyCalendar />
         </div>
       </div>
       <div></div>
