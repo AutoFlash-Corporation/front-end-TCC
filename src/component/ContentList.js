@@ -10,7 +10,7 @@ const ContentList = () => {
   const [forceUpdate, setForceUpdate] = useState(0);
 
   const decodeJwt = (token) => {
-    const payload = token.split('.')[1];
+    const payload = token.split(".")[1];
     const decodedToken = JSON.parse(atob(payload));
     return decodedToken;
   };
@@ -90,6 +90,9 @@ const ContentList = () => {
 
   return (
     <div className={styles.contentContainer}>
+      <a href="/registerContent/" className={styles.addContentButton}>
+        Cadastrar Novo Conteúdo
+      </a>
       <h1 className={styles.contentTitle}>Conteúdos já cadastrados:</h1>
       {mensagem && <p className={styles.message}>{mensagem}</p>}
       <div className={styles.contentGrid}>
@@ -100,7 +103,8 @@ const ContentList = () => {
               <p className={styles.cardDescription}>{conteudo.descricao}</p>
               <div className={styles.cardFooter}>
                 <span className={styles.cardFooterText}>
-                  {conteudos.length} card{conteudos.length !== 1 ? 's' : ''} adicionados
+                  {conteudos.length} card{conteudos.length !== 1 ? "s" : ""}{" "}
+                  adicionados
                 </span>
                 <button className={styles.cardFooterButton}>Ver mais</button>
               </div>
@@ -110,9 +114,6 @@ const ContentList = () => {
           <p className={styles.noContent}>Nenhum conteúdo encontrado.</p>
         )}
       </div>
-      <button onClick={handleSubmit} className={styles.addContentButton}>
-        Cadastrar Novo Conteúdo
-      </button>
     </div>
   );
 };
