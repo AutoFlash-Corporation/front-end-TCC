@@ -33,9 +33,6 @@ export default function Menu() {
       case "/revisao":
         setActiveButton("Revisão");
         break;
-      case "/relatorios":
-        setActiveButton("Relatórios");
-        break;
       default:
         setActiveButton(""); // Reseta se nenhuma rota é encontrada
     }
@@ -98,12 +95,6 @@ export default function Menu() {
           icon={<IoFolderOpenOutline />}
           name="Revisão"
         />
-        <MenuButton
-          href="/relatorios"
-          label="Relatórios"
-          icon={<BsFileText />}
-          name="Relatórios"
-        />
       </div>
     </div>
   );
@@ -122,8 +113,6 @@ function getBarPosition(button) {
       return 204; // Posição para Conteúdos
     case "Revisão":
       return 272; // Posição para Revisão
-    case "Relatórios":
-      return 342; // Posição para Relatórios
     default:
       return 0; // Posição padrão
   }

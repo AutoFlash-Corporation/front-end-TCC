@@ -26,7 +26,7 @@ const MyCalendar = () => {
     <div className={styles.CalendarGroup}>
       <CalendarHeatmap
         startDate={new Date('2024-11-01')}
-        endDate={new Date('2025-01-12')}
+        endDate={new Date('2025-11-30')}
         values={accessData}
       />
     </div>

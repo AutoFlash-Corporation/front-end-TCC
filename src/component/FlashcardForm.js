@@ -1,27 +1,24 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import { useEffect } from "react";
+import withAuth from "../utils/withAuth";
+import styles from "../styles/flashcardform.module.css";
 
 const FlashcardForm = () => {
   const [pergunta, setPergunta] = useState("");
   const [resposta, setResposta] = useState("");
   const [flashcards, setFlashcards] = useState([]);
   const [mensagem, setMensagem] = useState("");
-  
+
   const decodeJwt = (token) => {
-    const payload = token.split('.')[1];
+    const payload = token.split(".")[1];
     const decodedToken = JSON.parse(atob(payload)); // Decodifica o token
     return decodedToken;
   };
 
-  const handlePerguntaChange = (e) => setPergunta(e.target.value);
-  const handleRespostaChange = (e) => setResposta(e.target.value);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Verifica se os campos estão preenchidos
     if (!pergunta || !resposta) {
       setMensagem("Pergunta e resposta são obrigatórias.");
       return;
@@ -39,13 +36,13 @@ const FlashcardForm = () => {
       const userId = decodedToken.user_id;
 
       const payloadData = {
-        pergunta: pergunta, // Pergunta preenchida
-        resposta: resposta, // Resposta preenchida
-        usuario: userId, // ID do usuário
+        pergunta,
+        resposta,
+        usuario: userId,
       };
 
       const response = await axios.post(
-        "http://127.0.0.1:8000/api/flashcard/", // URL do seu endpoint
+        "http://127.0.0.1:8000/api/flashcard/",
         payloadData,
         {
           headers: {
@@ -55,44 +52,56 @@ const FlashcardForm = () => {
         }
       );
 
-      console.log("Flashcard cadastrado:", response.data);
       setMensagem("Flashcard cadastrado com sucesso!");
-
-      // Atualiza a lista de flashcards
       setFlashcards((prevFlashcards) => [...prevFlashcards, response.data]);
+      setPergunta("");
+      setResposta("");
     } catch (error) {
-      console.error("Erro ao cadastrar flashcard:", error);
       setMensagem("Erro ao cadastrar flashcard.");
     }
   };
 
   return (
-    <div>
+    <div className={styles.LoginGroup}>
       <h1>Cadastrar Flashcard</h1>
-      {mensagem && <p>{mensagem}</p>}
+      {mensagem && <p style={{ color: "red" }}>{mensagem}</p>}
       <form onSubmit={handleSubmit}>
-        <label>
-          Pergunta:
+        <div className={styles.inputGroup}>
+          <label htmlFor="pergunta" className={styles.inputLabel}>
+            Pergunta:
+          </label>
           <input
             type="text"
+            id="pergunta"
             value={pergunta}
-            onChange={handlePerguntaChange}
+            onChange={(e) => setPergunta(e.target.value)}
             required
+            className={styles.inputField}
           />
-        </label>
-
-        <label>
-          Resposta:
-          <input
-            type="text"
+        </div>
+        <div className={styles.inputGroup}>
+          <label htmlFor="resposta" className={styles.inputLabel}>
+            Resposta:
+          </label>
+          <textarea
+            id="resposta"
             value={resposta}
-            onChange={handleRespostaChange}
+            onChange={(e) => setResposta(e.target.value)}
             required
+            className={styles.inputField}
+            style={{ height: "100px" }}
           />
-        </label>
-
-        <button type="submit">Cadastrar Flashcard</button>
+        </div>
+        <div className={styles.ButtonGroup}>
+          <button type="submit" className={styles.ButtonLink}>
+            Cadastrar
+          </button>
+        </div>
       </form>
+
+      <a href="/card/" className={styles.addContentButton}>
+        Ver lista de cards
+      </a>
 
       <h2>Flashcards Cadastrados</h2>
       <ul>
@@ -106,4 +115,4 @@ const FlashcardForm = () => {
   );
 };
 
-export default FlashcardForm;
+export default withAuth(FlashcardForm);

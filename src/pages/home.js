@@ -39,8 +39,7 @@ const Home = ({ userName }) => {
           <header>
             <h2>Bem-vindo(a) de volta{userName ? `, ${userName}` : "!"}</h2>
           </header>
-        </div>
-        <div className={style.Background}>
+
           <main>
           <ShowBox
                 icon={<FaPeopleGroup />}

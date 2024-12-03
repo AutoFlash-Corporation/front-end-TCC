@@ -5,7 +5,7 @@ import withAuth from "../utils/withAuth";
 import styles from "../styles/contentlist.module.css"; // Importando o arquivo CSS com styles
 
 
-const ContentList = () => {
+const FlashcardList = () => {
   const [conteudos, setConteudos] = useState([]);
   const [mensagem, setMensagem] = useState("");
   const [forceUpdate, setForceUpdate] = useState(0);
@@ -91,32 +91,12 @@ const ContentList = () => {
 
   return (
     <div className={styles.contentContainer}>
-      <a href="/registerContent/" className={styles.addContentButton}>
+      <a href="/registerFlashcard/" className={styles.addContentButton}>
         Cadastrar Novo Conteúdo
       </a>
-      <h1 className={styles.contentTitle}>Conteúdos já cadastrados:</h1>
-      {mensagem && <p className={styles.message}>{mensagem}</p>}
-      <div className={styles.contentGrid}>
-        {conteudos.length > 0 ? (
-          conteudos.map((conteudo) => (
-            <div key={conteudo.id} className={styles.contentCard}>
-              <h2 className={styles.cardTitle}>{conteudo.titulo}</h2>
-              <p className={styles.cardDescription}>{conteudo.descricao}</p>
-              <div className={styles.cardFooter}>
-                <span className={styles.cardFooterText}>
-                  {conteudos.length} card{conteudos.length !== 1 ? "s" : ""}{" "}
-                  adicionados
-                </span>
-                <a href="/card/" className={styles.cardFooterButton}>Ver mais</a>
-              </div>
-            </div>
-          ))
-        ) : (
-          <p className={styles.noContent}>Nenhum conteúdo encontrado.</p>
-        )}
-      </div>
+      
     </div>
   );
 };
 
-export default withAuth(ContentList);
+export default withAuth(FlashcardList);
