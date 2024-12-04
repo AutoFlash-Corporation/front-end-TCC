@@ -92,7 +92,7 @@ const FlashcardList = () => {
   return (
     <div className={styles.contentContainer}>
       <a href="/registerFlashcard/" className={styles.addContentButton}>
-        Cadastrar Novo Conteúdo
+        Cadastrar novo Flashcard
       </a>
       
     </div>
