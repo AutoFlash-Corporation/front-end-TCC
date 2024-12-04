@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import withAuth from "../utils/withAuth";
@@ -7,6 +7,8 @@ import styles from "../styles/flashcardform.module.css";
 const FlashcardForm = () => {
   const [pergunta, setPergunta] = useState("");
   const [resposta, setResposta] = useState("");
+  const [conteudo, setConteudo] = useState("");
+  const [conteudos, setConteudos] = useState([]); // Para armazenar os conteúdos carregados
   const [flashcards, setFlashcards] = useState([]);
   const [mensagem, setMensagem] = useState("");
 
@@ -16,11 +18,32 @@ const FlashcardForm = () => {
     return decodedToken;
   };
 
+  // Carregar conteúdos existentes ao montar o componente
+  useEffect(() => {
+    const fetchConteudos = async () => {
+      try {
+        const token = Cookies.get("access");
+        const response = await axios.get(
+          "http://127.0.0.1:8000/api/conteudo/lista/", // Endpoint correto para listar conteúdos
+          {
+            headers: { Authorization: `Bearer ${token}` },
+          }
+        );
+        console.log(response.data); // Log para verificar o retorno da API
+        setConteudos(response.data); // Define os conteúdos no state
+      } catch (error) {
+        console.error("Erro ao carregar conteúdos:", error);
+        setMensagem("Erro ao carregar conteúdos.");
+      }
+    };
+    fetchConteudos();
+  }, []);
+
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!pergunta || !resposta) {
-      setMensagem("Pergunta e resposta são obrigatórias.");
+    if (!pergunta || !resposta || !conteudo) {
+      setMensagem("Pergunta, resposta e conteúdo são obrigatórios.");
       return;
     }
 
@@ -38,6 +61,7 @@ const FlashcardForm = () => {
       const payloadData = {
         pergunta,
         resposta,
+        conteudo, // Agora estamos enviando o ID do conteúdo
         usuario: userId,
       };
 
@@ -56,7 +80,9 @@ const FlashcardForm = () => {
       setFlashcards((prevFlashcards) => [...prevFlashcards, response.data]);
       setPergunta("");
       setResposta("");
+      setConteudo("");
     } catch (error) {
+      console.error("Erro ao cadastrar flashcard:", error);
       setMensagem("Erro ao cadastrar flashcard.");
     }
   };
@@ -66,6 +92,25 @@ const FlashcardForm = () => {
       <h1>Cadastrar Flashcard</h1>
       {mensagem && <p style={{ color: "red" }}>{mensagem}</p>}
       <form onSubmit={handleSubmit}>
+        <div className={styles.inputGroup}>
+          <label htmlFor="conteudo" className={styles.inputLabel}>
+            Conteúdo:
+          </label>
+          <select
+            id="conteudo"
+            value={conteudo}
+            onChange={(e) => setConteudo(e.target.value)}
+            required
+            className={styles.inputField}
+          >
+            <option value="">Selecione um conteúdo</option>
+            {conteudos.map((item) => (
+              <option key={item.id} value={item.id}>
+                {item.titulo} {/* Exibindo o nome do conteúdo */}
+              </option>
+            ))}
+          </select>
+        </div>
         <div className={styles.inputGroup}>
           <label htmlFor="pergunta" className={styles.inputLabel}>
             Pergunta:
@@ -107,7 +152,9 @@ const FlashcardForm = () => {
       <ul>
         {flashcards.map((flashcard) => (
           <li key={flashcard.id}>
-            <p>{flashcard.pergunta} - {flashcard.resposta}</p>
+            <p>
+              {flashcard.pergunta} - {flashcard.resposta}
+            </p>
           </li>
         ))}
       </ul>
