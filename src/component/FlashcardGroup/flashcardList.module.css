@@ -168,6 +168,12 @@
   border: none;
   border-radius: 8px;
   cursor: pointer;
+  position: fixed; /* Fixar na posição */
+  bottom: 20px; /* Distância do fundo */
+  left: 20px; /* Distância da esquerda */
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+  z-index: 10; /* Garantir que fique acima de outros elementos */
 }
 
 .editButton {
