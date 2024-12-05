@@ -1,116 +1,93 @@
-
-.LoginGroup {
+.Background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    padding: 20px;
+  }
+  
+  .LoginGroup {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 80%;
-    height: 100vh;
-    margin-left: 150px;
-    margin-top: -655px;
-    }
-
-
-.LoginGroup h1{
+    width: 100%;
+    max-width: 900px;
+    margin-top: -650px;
+    background: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0px 8px 10px rgba(0, 0, 0, 0.12);
+    padding: 40px;
+  }
+  
+  .LoginGroup h1 {
     color: #2F281E;
-    font-family: Montserrat;
-    font-size: 50px;
-    font-style: normal;
-    font-weight: 800;
-    line-height: 100px;
-    margin-top: -10px;
-    margin-bottom: 40px;
-}
-
-.inputGroup {
-    display: flex;
-    flex-direction: column;
-}
-
-
-.inputLabel {
-    height: 22px;   
-    width: 81px;
-    color:  rgb(152, 150, 150);
-    font-family: "Montserrat-Regular", Helvetica;
-    font-size: 20px;
-    font-weight: 400;
-    left: 0;
-    letter-spacing: 0;
-    line-height: 31px;
-    top: 0;
-    white-space: nowrap;
-    width: 81px;
-    margin-bottom: 10px;
-}
-
-.inputField {
-    width: 800px;
-    height: 34px;
-    padding-left: 10px;
-    padding-right: 10px;
-    border-radius: 8px;
-    border: 1px solid#2B2E48;
-    font-size: 20px;
-    background: rgba(175, 179, 255, 0.00);
-    margin-bottom: 10px;
-}
-
-.linkForgot {
-    text-decoration: none;
-    color: #B136F7;
-    font-family: Montserrat;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    margin-top: -30px;
-}
-
-.linkSingup {
-    color:#7B57E0;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    line-height: 31px;
-    text-decoration: none;
-}
-
-.ButtonGroup {
-    display: flex;
-    flex-direction: column;
-    margin-top: 20px;
-    margin-bottom: 20px;
-
-}
-
-.ButtonGroup p {
-    color:#000;
-    font-family: Montserrat;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 31px; /* 221.429% */
-}
-
-.ButtonLink {
-    margin-top: 30px;
-    width: 800px;
-    height: 56px;
-    flex-shrink: 0;
-    border-radius: 5px;
-    background:#BB6BD9;
-    color: #FFF;
+    font-family: Montserrat, sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    margin-bottom: 30px;
     text-align: center;
-    font-family: Montserrat;
+  }
+  
+  .inputGroup {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  .inputLabel {
+    font-family: "Montserrat-Regular", Helvetica, sans-serif;
     font-size: 16px;
-    font-style: normal;
+    font-weight: 500;
+    color: #5A5A5A;
+    margin-bottom: 8px;
+  }
+  
+  .inputField {
+    width: 600px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #D1D5DB;
+    font-size: 16px;
+    background: #f9f9f9;
+    transition: border 0.3s, background 0.3s;
+  }
+  
+  .inputField:focus {
+    border: 1px solid #6B7280;
+    background: #ffffff;
+    outline: none;
+  }
+  
+  .ButtonGroup {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+  }
+  
+  .ButtonLink {
+    width: 100%;
+    max-width: 300px;
+    padding: 12px;
+    border-radius: 8px;
+    background: #7B57E0;
+    color: white;
+    text-align: center;
+    font-family: Montserrat, sans-serif;
+    font-size: 18px;
     font-weight: 600;
-    line-height: normal;
     border: none;
-}
-
-.addContentButton {
+    cursor: pointer;
+    transition: background 0.3s, transform 0.2s;
+  }
+  
+  .ButtonLink:hover {
+    background: #6844c0;
+    transform: scale(1.02);
+  }
+  
+  .addContentButton {
     background-color: #8107ad;
     color: white;
     padding: 10px 20px;
@@ -118,43 +95,13 @@
     border-radius: 4px;
     cursor: pointer;
     text-decoration: none;
-    margin-bottom: 25px;
-    text-align: center;
-    margin-top: 30px;
-    font-family: Montserrat;
+    margin-top: 20px;
+    font-family: Montserrat, sans-serif;
     font-weight: 500;
     font-size: 16px;
-    font-style: normal;
   }
   
   .addContentButton:hover {
-    background-color: rgb(72, 33, 136);
+    background-color: #6b0796;
   }
   
-
-
-.inputField:focus{
-    border: 1px solid rgba(125, 125, 125, 1);
-    outline: none;
-}
-
-
-.linkForgot:hover {
-    color:  #9508c9;
-    font-family: Montserrat;
-    font-size: 15px;
-    font-style: normal;
-    font-weight: 400;
-    margin-top: -30px;
-}
-
-.linkSingup:hover {
-    color:  #541ced;
-    font-family: Montserrat;
-}
-
-.ButtonLink:hover {
-    background:  #a90de1;
-}
-
-
