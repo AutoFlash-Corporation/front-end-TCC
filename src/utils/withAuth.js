@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useRouter } from "next/router";
 import Cookies from "js-cookie";
-import Loading from "../component/Loading"; // Se você tiver um componente de Loading para exibir durante a checagem
+import Loading from "../component/Loading/Loading"; // Se você tiver um componente de Loading para exibir durante a checagem
 
 const withAuth = (WrappedComponent) => {
   const AuthHOC = (props) => {

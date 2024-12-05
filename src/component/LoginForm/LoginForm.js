@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { loginUser } from "../utils/auth";
+import { loginUser } from "../../utils/auth";
 import Cookies from "js-cookie";
-import styles from "../styles/login.module.css";
+import styles from "../../styles/login.module.css";
 
 function LoginForm() {
   const [username, setUsername] = useState("");

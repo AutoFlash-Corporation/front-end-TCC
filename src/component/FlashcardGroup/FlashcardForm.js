@@ -1,8 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import withAuth from "../utils/withAuth";
-import styles from "../styles/flashcardform.module.css";
+import withAuth from "../../utils/withAuth";
+import styles from "../FlashcardGroup/flashcardform.module.css";
 
 const FlashcardForm = () => {
   const [pergunta, setPergunta] = useState("");
@@ -147,17 +147,6 @@ const FlashcardForm = () => {
       <a href="/card/" className={styles.addContentButton}>
         Ver lista de cards
       </a>
-
-      <h2>Flashcards Cadastrados</h2>
-      <ul>
-        {flashcards.map((flashcard) => (
-          <li key={flashcard.id}>
-            <p>
-              {flashcard.pergunta} - {flashcard.resposta}
-            </p>
-          </li>
-        ))}
-      </ul>
     </div>
   );
 };

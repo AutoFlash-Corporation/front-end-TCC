@@ -2,7 +2,7 @@
 
 import React from 'react';
 import useEmblaCarousel from 'embla-carousel-react';
-import styles from '../styles/carousel.module.css'; // Arquivo CSS
+import styles from '../Carousel/carousel.module.css'; // Arquivo CSS
 
 const Carousel = () => {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, speed: 4 });

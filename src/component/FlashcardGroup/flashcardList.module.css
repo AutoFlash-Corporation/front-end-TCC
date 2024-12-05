@@ -1,15 +1,14 @@
-.contentContainer {
+.flashcardContainer {
   padding: 20px;
 }
 
-.contentTitle {
-  color:#7d7d7d;
-
+.flashcardTitle {
+  color: #7d7d7d;
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 22.4px; 
+  line-height: 22.4px;
   margin-top: 30px;
 }
 
@@ -17,13 +16,13 @@
   color: red;
 }
 
-.contentGrid {
+.flashcardGrid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.contentCard {
+.flashcardCard {
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
@@ -51,27 +50,12 @@
   color: #555;
 }
 
-.cardFooterButton {
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cardFooterButton:hover {
-  background-color: #0056b3;
-}
-
 .noContent {
   font-size: 18px;
   color: #888;
-  
 }
 
-.addContentButton {
+.addFlashcardButton {
   background-color: #28a745;
   color: white;
   padding: 10px 20px;
@@ -81,6 +65,29 @@
   text-decoration: none;
 }
 
-.addContentButton:hover {
+.addFlashcardButton:hover {
   background-color: #218838;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cardEditButton,
+.cardDeleteButton {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cardEditButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cardDeleteButton {
+  background-color: #f44336;
+  color: white;
 }

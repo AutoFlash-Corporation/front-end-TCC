@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import Menu from "@/component/Menu";
-import SearchBar from "@/component/SearchBar";
+import Menu from "@/component/Menu/Menu";
+import SearchBar from "@/component/SearchBar/SearchBar";
 import withAuth from "../utils/withAuth"
 
 const RevisaoPage = () => {

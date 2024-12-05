@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CalendarHeatmap from 'react-calendar-heatmap';
 import 'react-calendar-heatmap/dist/styles.css'; // Importando o estilo padrão
-import styles from '../styles/calendar.module.css'
+import styles from '../Calendar/calendar.module.css'; // Importando o estilo personalizado
 
 const MyCalendar = () => {
   const [accessData, setAccessData] = useState([]);

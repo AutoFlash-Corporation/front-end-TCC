@@ -1,5 +1,5 @@
 import React from 'react';
-import styles from "../styles/showbox.module.css";
+import styles from "../ShowBox/showbox.module.css";
 import { MdArrowRight } from "react-icons/md";
 
 export default function ShowBox({ icon, title, value, description, link }) {

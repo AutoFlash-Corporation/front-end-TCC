@@ -1,7 +1,7 @@
 import React from "react";
-import Menu from "@/component/Menu";
+import Menu from "@/component/Menu/Menu";
 import withAuth from "../utils/withAuth"
-import ContentList from "@/component/ContentList";
+import ContentList from "../component/ContentGroup/ContentList";
 import styles from "../styles/content.module.css";
 
 const ConteudoPage = () => {

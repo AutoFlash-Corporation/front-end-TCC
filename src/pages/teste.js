@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import SearchBar from "../component/SearchBar"; // Importando a barra de pesquisa
+import SearchBar from "../component/SearchBar/SearchBar"; // Importando a barra de pesquisa
 
 import withAuth from "../utils/withAuth";
 import ContentForm from "@/component/ContentForm";

@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import withAuth from "../utils/withAuth";
-import styles from "../styles/contentlist.module.css"; // Importando o arquivo CSS com styles
-
+import withAuth from "../../utils/withAuth";
+import styles from "../ContentGroup/contentlist.module.css"; // Importando o arquivo CSS com styles
 
 const ContentList = () => {
   const [conteudos, setConteudos] = useState([]);
@@ -45,44 +44,31 @@ const ContentList = () => {
     }
   };
 
-  const handleSubmit = async (e) => {
-    e.preventDefault();
+  const handleDelete = async (id) => {
+    const token = Cookies.get("access");
+    if (!token) {
+      setMensagem("Token de acesso não encontrado.");
+      return;
+    }
 
     try {
-      const token = Cookies.get("access");
-
-      if (!token) {
-        setMensagem("Token de acesso não encontrado.");
-        return;
-      }
-
-      const decodedToken = decodeJwt(token);
-      const userId = decodedToken.user_id;
-
-      const payloadData = {
-        titulo: "Novo Conteúdo",
-        descricao: "Descrição do conteúdo",
-        usuario: userId,
-      };
-
-      const response = await axios.post(
-        "http://127.0.0.1:8000/api/conteudo/",
-        payloadData,
-        {
-          headers: {
-            Authorization: `Bearer ${token}`,
-            "Content-Type": "application/json",
-          },
-        }
-      );
-
-      setConteudos((prevConteudos) => [...prevConteudos, response.data]);
-      setForceUpdate((prev) => prev + 1);
-      setMensagem("Conteúdo cadastrado com sucesso!");
+      await axios.delete(`http://127.0.0.1:8000/api/conteudo/${id}/excluir/`, {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
+        },
+      });
+      setMensagem("Conteúdo excluído com sucesso!");
+      setForceUpdate((prev) => prev + 1); // Força uma atualização dos conteúdos
     } catch (error) {
-      console.error("Erro ao cadastrar conteúdo:", error);
-      setMensagem("Erro ao cadastrar conteúdo.");
+      console.error("Erro ao excluir conteúdo:", error);
+      setMensagem("Erro ao excluir conteúdo.");
     }
+  };
+
+  const handleEdit = (id) => {
+    // Redireciona para a página de edição
+    window.location.href = `/editarConteudo/${id}`;
   };
 
   useEffect(() => {
@@ -107,7 +93,21 @@ const ContentList = () => {
                   {conteudos.length} card{conteudos.length !== 1 ? "s" : ""}{" "}
                   adicionados
                 </span>
-                <a href="/card/" className={styles.cardFooterButton}>Ver mais</a>
+              </div>
+              {/* Botões de Editar e Excluir */}
+              <div className={styles.cardActions}>
+                <button
+                  onClick={() => handleEdit(conteudo.id)}
+                  className={styles.cardEditButton} 
+                >
+                  Editar
+                </button>
+                <button
+                  onClick={() => handleDelete(conteudo.id)}
+                  className={styles.cardDeleteButton}
+                >
+                  Excluir
+                </button>
               </div>
             </div>
           ))

@@ -1,0 +1,109 @@
+.contentContainer {
+  padding: 20px;
+}
+
+.contentTitle {
+  color:#7d7d7d;
+
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.4px; 
+  margin-top: 30px;
+}
+
+.message {
+  color: red;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.contentCard {
+  background-color: #f4f4f4;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.cardTitle {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.cardDescription {
+  font-size: 16px;
+  margin: 10px 0;
+}
+
+.cardFooter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cardFooterText {
+  font-size: 14px;
+  color: #555;
+}
+
+.cardFooterButton {
+  background-color: #007bff;
+  color: white;
+  padding: 5px 10px;
+  border: none;
+  border-radius: 4px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.cardFooterButton:hover {
+  background-color: #0056b3;
+}
+
+.noContent {
+  font-size: 18px;
+  color: #888;
+  
+}
+
+.addContentButton {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.addContentButton:hover {
+  background-color: #218838;
+}
+
+.cardActions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.cardEditButton,
+.cardDeleteButton {
+  padding: 5px 10px;
+  border: none;
+  cursor: pointer;
+}
+
+.cardEditButton {
+  background-color: #4caf50;
+  color: white;
+}
+
+.cardDeleteButton {
+  background-color: #f44336;
+  color: white;
+}

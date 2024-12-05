@@ -1,8 +1,8 @@
 import React from "react";
 import styles from "../styles/contentform.module.css";
-import Logo from "@/component/Logo";
+import Logo from "@/component/Logo/Logo";
 import ContentForm from "@/component/ContentForm";
-import Menu from "@/component/Menu";
+import Menu from "@/component/Menu/Menu";
 
 const RegisterContentPage = () => {
   return (

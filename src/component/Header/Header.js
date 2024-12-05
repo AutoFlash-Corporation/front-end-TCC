@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/header.module.css";
-import logo from "../image/logo.svg"; // Ajuste o caminho se necessário
+import styles from "../Header/header.module.css";
+import logo from "../../image/logo.svg"; // Ajuste o caminho se necessário
 
 const Header = ({ siteTitle = "AutoFlash", links = [] }) => {
   return (

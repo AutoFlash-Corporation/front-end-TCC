@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation"; // Use `usePathname` para capturar a rota
-import styles from "../styles/menu.module.css";
+import styles from "../../component/Menu/menu.module.css";
 
 import { PiSquaresFourLight } from "react-icons/pi";
 import { IoPricetagOutline, IoFolderOpenOutline } from "react-icons/io5";

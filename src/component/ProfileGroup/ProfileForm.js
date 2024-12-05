@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useRouter } from "next/router";
-import Loading from "../component/Loading";
-import ProfileAvatar from "../component/ProfileAvatar";
+import Loading from "./Loading/Loading";
+import ProfileAvatar from "./ProfileGroup/ProfileAvatar";
 
 const ProfileForm = ({ profileData, onUpdate }) => {
   const [updatedData, setUpdatedData] = useState(profileData);

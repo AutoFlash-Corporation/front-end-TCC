@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import Menu from "@/component/Menu";
+import Menu from "@/component/Menu/Menu";
 import withAuth from "../utils/withAuth"
-import FlashcardList from "@/component/FlashcardList";
+import FlashcardList from "../component/FlashcardGroup/FlashcardList";
 
 const CardPage = () => {
   return (

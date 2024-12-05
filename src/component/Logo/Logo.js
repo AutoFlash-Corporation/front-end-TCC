@@ -1,8 +1,8 @@
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
-import styles from "../styles/logo.module.css"; // Importa o CSS específico para o Logo
-import logo from "../image/logo.svg"; // Ajuste o caminho se necessário
+import styles from "../Logo/logo.module.css"; // Importa o CSS específico para o Logo
+import logo from "../../image/logo.svg"; // Ajuste o caminho se necessário
 
 const Logo = ({ siteTitle = "AutoFlash" }) => {
   return (

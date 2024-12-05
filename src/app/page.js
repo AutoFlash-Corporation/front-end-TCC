@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
-import Header from "@/component/Header";
+import Header from "@/component/Header/Header";
 
 import logo from "../image/logo.svg";
 
 import styles from "../app/page.module.css";
-import Carousel from "@/component/Carousel";
+import Carousel from "@/component/Carousel/Carousel";
 
 export default function Home({ siteTitle = "AutoFlash", links = [] }) {
   return (

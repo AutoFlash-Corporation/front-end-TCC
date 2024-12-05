@@ -1,8 +1,8 @@
 import React, { useState, useEffect } from "react";
 import { getProfile, updateProfile } from "../utils/profile"; // Importa as funções de perfil
-import Loading from "../component/Loading";
+import Loading from "../component/Loading/Loading";
 import ProfileForm from "../component/ProfileForm";
-import ProfileAvatar from "../component/ProfileAvatar";
+import ProfileAvatar from "../component/ProfileGroup/ProfileAvatar";
 
 const ProfilePage = () => {
   const [profileData, setProfileData] = useState(null);
