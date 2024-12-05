@@ -1,5 +1,5 @@
 import { useState } from "react";
-import api from "../utils/api";
+import api from "../../utils/api";
 import styles from "../../styles/register.module.css";
 import { useRouter } from "next/router";
 
