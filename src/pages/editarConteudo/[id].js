@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import axios from 'axios';
 import Cookies from 'js-cookie';
-import styles from '../../styles/contentform.module.css'; // Ajuste o caminho conforme seu CSS
+import styles from '../../component/ContentGroup/contentform.module.css'; // Ajuste o caminho conforme seu CSS
 
 const EditContentPage = () => {
   const router = useRouter();
@@ -11,11 +11,20 @@ const EditContentPage = () => {
   const [titulo, setTitulo] = useState('');
   const [descricao, setDescricao] = useState('');
   const [mensagem, setMensagem] = useState('');
-  
+  const [userId, setUserId] = useState('');
+
   useEffect(() => {
     if (id) {
       // Quando o ID está disponível, faz a chamada para buscar o conteúdo
       fetchConteudo(id);
+    }
+
+    // Extraindo o userId do token
+    const token = Cookies.get('access');
+    if (token) {
+      const payload = token.split('.')[1];
+      const decodedToken = JSON.parse(atob(payload));
+      setUserId(decodedToken.user_id); // Definindo o userId
     }
   }, [id]);
 
@@ -54,10 +63,10 @@ const EditContentPage = () => {
         return;
       }
 
-      const payload = { titulo, descricao };
+      const payload = { titulo, descricao, usuario: userId };
 
       await axios.put(
-        `http://127.0.0.1:8000/api/conteudo/${id}/`,
+        `http://127.0.0.1:8000/api/conteudo/${id}/atualizar/`,
         payload,
         {
           headers: {
@@ -69,7 +78,7 @@ const EditContentPage = () => {
 
       setMensagem('Conteúdo atualizado com sucesso!');
       // Após a atualização, redireciona para a lista de conteúdos
-      router.push('/contentList');
+      router.push('/conteudos/');
     } catch (error) {
       setMensagem('Erro ao atualizar conteúdo.');
     }

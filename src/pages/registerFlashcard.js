@@ -1,6 +1,6 @@
 import React from "react";
-import styles from "../styles/flashcardform.module.css";
-import FlashcardForm from "@/component/FlashcardForm";
+import styles from "../component/FlashcardGroup/flashcardform.module.css";
+import FlashcardForm from "../component/FlashcardGroup/FlashcardForm";
 
 const RegisterFlashcardPage = () => {
   return (

@@ -4,7 +4,7 @@ import SearchBar from "../component/SearchBar/SearchBar"; // Importando a barra 
 import style from "@/styles/home.module.css";
 import MyCalendar from "@/component/Calendar/Calendar";
 import Logo from "@/component/Logo/Logo";
-import ShowBox from "@/component/ShowBox/ShowBox";
+import ShowBox from "@/component/ShowBox";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoPersonAdd } from "react-icons/io5";
 import { IoWallet } from "react-icons/io5";

@@ -1,0 +1,10 @@
+.container {
+    width: 1276px;
+    height: 500px;
+    border-top-left-radius: 16px;
+    border-top-right-radius: 16px;
+    align-items: center;
+    margin-left: 160px;
+    margin-top: -600px;
+    display: grid;
+}

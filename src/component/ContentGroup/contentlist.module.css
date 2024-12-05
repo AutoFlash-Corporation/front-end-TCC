@@ -3,13 +3,13 @@
 }
 
 .contentTitle {
-  color:#7d7d7d;
+  color: #7d7d7d;
 
   font-family: Montserrat;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
-  line-height: 22.4px; 
+  line-height: 22.4px;
   margin-top: 30px;
 }
 
@@ -27,17 +27,29 @@
   background-color: #f4f4f4;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 6 6px 6px rgba(8, 8, 8, 0.15);
 }
 
 .cardTitle {
+  color: #203562;
+  font-family: Montserrat;
   font-size: 20px;
-  font-weight: bold;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 33.6px; /* 140% */
+  align-items: left;
+  margin-top: -5px;
 }
 
 .cardDescription {
-  font-size: 16px;
-  margin: 10px 0;
+  color: var(--Font, #303030);
+
+  /* b1 */
+  font-family: Montserrat;
+  font-size: 12px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.4px; /* 140% */
 }
 
 .cardFooter {
@@ -68,7 +80,6 @@
 .noContent {
   font-size: 18px;
   color: #888;
-  
 }
 
 .addContentButton {
@@ -96,14 +107,30 @@
   padding: 5px 10px;
   border: none;
   cursor: pointer;
+  margin-top: 25px;
 }
 
 .cardEditButton {
   background-color: #4caf50;
   color: white;
+  border-radius: 5px;
+  margin-left: 128px;
+}
+
+.cardEditButton:hover {
+  background-color: #45a049;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
 }
 
 .cardDeleteButton {
   background-color: #f44336;
   color: white;
+  border-radius: 5px;
+}
+
+.cardDeleteButton:hover {
+  background-color: #da190b;
+  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
+  transform: translateY(-3px);
 }

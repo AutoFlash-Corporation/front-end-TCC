@@ -78,7 +78,7 @@ const FlashcardList = () => {
   return (
     <div className={styles.flashcardContainer}>
       <a href="/registerFlashcard/" className={styles.addFlashcardButton}>
-        Cadastrar Novo Flashcard
+        Cadastrar novo flashcard
       </a>
       <h1 className={styles.flashcardTitle}>Flashcards já cadastrados:</h1>
       {mensagem && <p className={styles.message}>{mensagem}</p>}

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import withAuth from "../utils/withAuth";
+import withAuth from "../../utils/withAuth";
 import styles from "../ContentGroup/contentform.module.css";
 
 const ContentForm = ({ userName }) => {

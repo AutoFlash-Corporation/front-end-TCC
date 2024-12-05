@@ -78,7 +78,7 @@ const ContentList = () => {
   return (
     <div className={styles.contentContainer}>
       <a href="/registerContent/" className={styles.addContentButton}>
-        Cadastrar Novo Conteúdo
+        Cadastrar novo conteúdo
       </a>
       <h1 className={styles.contentTitle}>Conteúdos já cadastrados:</h1>
       {mensagem && <p className={styles.message}>{mensagem}</p>}

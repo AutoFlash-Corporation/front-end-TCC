@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import Menu from "@/component/Menu/Menu";
 import withAuth from "../utils/withAuth"
 import FlashcardList from "../component/FlashcardGroup/FlashcardList";
+import styles from "../styles/card.module.css";
 
 const CardPage = () => {
   return (
@@ -9,7 +10,7 @@ const CardPage = () => {
       <div>
         <Menu />
 
-        <div>
+        <div className={styles.container}>
           <FlashcardList />
         </div>
       </div>
