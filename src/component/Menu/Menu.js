@@ -2,20 +2,18 @@
 
 import Link from "next/link";
 import { useState, useEffect } from "react";
-import { usePathname } from "next/navigation"; // Use `usePathname` para capturar a rota
+import { usePathname } from "next/navigation";
 import styles from "../../component/Menu/menu.module.css";
 
 import { PiSquaresFourLight } from "react-icons/pi";
 import { IoPricetagOutline, IoFolderOpenOutline } from "react-icons/io5";
 import { BsFileText } from "react-icons/bs";
 import { GiSpellBook } from "react-icons/gi";
-import { LuFolders } from "react-icons/lu";
 
 export default function Menu() {
   const [activeButton, setActiveButton] = useState("");
-  const pathname = usePathname(); // Captura a rota atual
+  const pathname = usePathname();
 
-  // Atualiza o estado do botão ativo com base na rota
   useEffect(() => {
     switch (pathname) {
       case "/home":
@@ -34,11 +32,10 @@ export default function Menu() {
         setActiveButton("Revisão");
         break;
       default:
-        setActiveButton(""); // Reseta se nenhuma rota é encontrada
+        setActiveButton("");
     }
   }, [pathname]);
 
-  // Componentização dos botões do menu
   const MenuButton = ({ href, label, icon, name }) => (
     <Link href={href} className={styles.link}>
       <button
@@ -46,25 +43,22 @@ export default function Menu() {
           activeButton === name ? styles.active : ""
         }`}
       >
-        {icon} {label}
+        {icon}
+        {label}
       </button>
     </Link>
   );
 
   return (
     <div className={styles.menu}>
-       
       <div className={styles.buttons}>
-        {/* Barrinha que acompanha o botão ativo */}
         <div
           className={styles.activeBar}
           style={{
             transform: `translateY(${getBarPosition(activeButton)}px)`,
-            transition: "transform 0.3s ease-in-out", // Adiciona animação suave
+            transition: "transform 0.3s ease-in-out",
           }}
         />
-
-        {/* Botões do menu */}
         <MenuButton
           href="/home"
           label="Home"
@@ -100,20 +94,19 @@ export default function Menu() {
   );
 }
 
-// Função para calcular a posição da barra dinamicamente
 function getBarPosition(button) {
   switch (button) {
     case "Home":
-      return 7; // Posição para Home
+      return 0;
     case "Card":
-      return 72; // Posição para Card
+      return 80;
     case "Autocard":
-      return 142; // Posição para Autocard
+      return 160;
     case "Conteúdos":
-      return 204; // Posição para Conteúdos
+      return 240;
     case "Revisão":
-      return 272; // Posição para Revisão
+      return 320;
     default:
-      return 0; // Posição padrão
+      return 0;
   }
 }
