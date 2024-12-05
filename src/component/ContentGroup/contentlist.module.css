@@ -1,136 +1,180 @@
-.contentContainer {
+.pageContainer {
+  display: flex;
+  flex-direction: row;
   padding: 20px;
-}
-
-.contentTitle {
-  color: #7d7d7d;
-
-  font-family: Montserrat;
-  font-size: 16px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22.4px;
-  margin-top: 30px;
-}
-
-.message {
-  color: red;
-}
-
-.contentGrid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
   gap: 20px;
+  border-radius: 30px;
+  background: var(--Secondary, #f5f5f5);;
+  height: 546px;
+  max-height: 546px;
+  overflow-y: auto;
+  margin-top: 20px;
+  flex-shrink: 0;
 }
 
-.contentCard {
-  background-color: #f4f4f4;
+
+.contentSidebar {
+  width: 25%;
+  background-color: #ffffff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 6 6px 6px rgba(8, 8, 8, 0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  overflow-y: auto;
 }
 
-.cardTitle {
-  color: #203562;
-  font-family: Montserrat;
-  font-size: 20px;
-  font-style: normal;
-  font-weight: 600;
-  line-height: 33.6px; /* 140% */
-  align-items: left;
-  margin-top: -5px;
-}
-
-.cardDescription {
-  color: var(--Font, #303030);
-
-  /* b1 */
-  font-family: Montserrat;
-  font-size: 12px;
-  font-style: normal;
-  font-weight: 500;
-  line-height: 22.4px; /* 140% */
-}
-
-.cardFooter {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.cardFooterText {
-  font-size: 14px;
-  color: #555;
-}
-
-.cardFooterButton {
-  background-color: #007bff;
-  color: white;
-  padding: 5px 10px;
-  border: none;
-  border-radius: 4px;
-  text-decoration: none;
-  cursor: pointer;
-}
-
-.cardFooterButton:hover {
-  background-color: #0056b3;
-}
-
-.noContent {
-  font-size: 18px;
-  color: #888;
-}
 
 .addContentButton {
   background-color: #28a745;
   color: white;
   padding: 10px 20px;
   border: none;
-  border-radius: 4px;
+  border-radius: 8px;
   cursor: pointer;
   text-decoration: none;
+  display: block;
+  margin-bottom: 20px;
+  text-align: center;
 }
 
 .addContentButton:hover {
   background-color: #218838;
 }
 
-.cardActions {
-  display: flex;
-  justify-content: space-between;
+.contentTitle {
+  color: #7d7d7d;
+  font-family: Montserrat;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.4px;
   margin-top: 10px;
 }
 
-.cardEditButton,
-.cardDeleteButton {
-  padding: 5px 10px;
+.contentButton {
+  background-color: #f4f4f4;
+  color: #203562;
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 20px;
+  text-align: left;
+  padding: 10px 15px;
+  margin-bottom: 10px;
   border: none;
+  border-radius: 10px;
   cursor: pointer;
-  margin-top: 25px;
+  width: 100%;
+  text-align: left;
+  transition: all 0.3s ease;
 }
 
-.cardEditButton {
+.contentButton:hover {
+  background-color:rgba(4, 96, 217, 0.4);
+  color: white;
+}
+
+.activeButton {
+  background-color: rgba(4, 96, 217, 1);
+  color: white;
+}
+
+.contentDisplay {
+  width: 75%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.selectedContent {
+  padding: 20px;
+  text-align: left;
+  color: #303030;
+}
+
+.selectedContent h2 {
+  color: #203562;
+  font-family: Montserrat;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 33.6px; /* 140% */
+  margin-bottom: 15px;
+}
+
+.selectedContent p {
+  font-family: Montserrat;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 22.4px;
+  color: #303030;
+}
+
+.noContentSelected {
+  font-size: 16px;
+  color: #888;
+  font-family: Montserrat;
+  font-style: normal;
+  font-weight: 500;
+}
+
+.contentDisplay {
+  width: 75%;
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  position: relative; /* Define o contêiner como referência para os botões */
+  overflow: auto; /* Permite rolar o conteúdo se necessário */
+}
+
+.selectedContent {
+  padding: 20px;
+  text-align: left;
+  color: #303030;
+  flex: 1; /* Faz o conteúdo ocupar o espaço disponível */
+}
+
+.actionButtons {
+  position: absolute; /* Posiciona os botões de forma fixa dentro do contêiner */
+  bottom: 20px; /* Alinha os botões à parte inferior */
+  left: 20px; /* Alinha os botões à esquerda */
+  display: flex;
+  gap: 10px; /* Espaçamento entre os botões */
+}
+
+.editButton,
+.deleteButton {
+  padding: 10px 20px;
+  font-size: 14px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.editButton {
   background-color: #4caf50;
   color: white;
-  border-radius: 5px;
-  margin-left: 128px;
 }
 
-.cardEditButton:hover {
-  background-color: #45a049;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px);
+.editButton:hover {
+  background-color: #388e3c;
 }
 
-.cardDeleteButton {
+.deleteButton {
   background-color: #f44336;
   color: white;
-  border-radius: 5px;
 }
 
-.cardDeleteButton:hover {
-  background-color: #da190b;
-  box-shadow: 0 5px 10px 0 rgba(0, 0, 0, 0.25);
-  transform: translateY(-3px);
+.deleteButton:hover {
+  background-color: #d32f2f;
 }

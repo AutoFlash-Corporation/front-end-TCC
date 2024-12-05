@@ -2,10 +2,11 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
 import withAuth from "../../utils/withAuth";
-import styles from "../ContentGroup/contentlist.module.css"; // Importando o arquivo CSS com styles
+import styles from "../ContentGroup/contentlist.module.css";
 
 const ContentList = () => {
   const [conteudos, setConteudos] = useState([]);
+  const [conteudoSelecionado, setConteudoSelecionado] = useState(null);
   const [mensagem, setMensagem] = useState("");
   const [forceUpdate, setForceUpdate] = useState(0);
 
@@ -59,7 +60,10 @@ const ContentList = () => {
         },
       });
       setMensagem("Conteúdo excluído com sucesso!");
-      setForceUpdate((prev) => prev + 1); // Força uma atualização dos conteúdos
+      setForceUpdate((prev) => prev + 1);
+      if (conteudoSelecionado && conteudoSelecionado.id === id) {
+        setConteudoSelecionado(null);
+      }
     } catch (error) {
       console.error("Erro ao excluir conteúdo:", error);
       setMensagem("Erro ao excluir conteúdo.");
@@ -67,8 +71,11 @@ const ContentList = () => {
   };
 
   const handleEdit = (id) => {
-    // Redireciona para a página de edição
     window.location.href = `/editarConteudo/${id}`;
+  };
+
+  const handleSelect = (conteudo) => {
+    setConteudoSelecionado(conteudo);
   };
 
   useEffect(() => {
@@ -76,43 +83,57 @@ const ContentList = () => {
   }, [forceUpdate]);
 
   return (
-    <div className={styles.contentContainer}>
-      <a href="/registerContent/" className={styles.addContentButton}>
-        Cadastrar novo conteúdo
-      </a>
-      <h1 className={styles.contentTitle}>Conteúdos já cadastrados:</h1>
-      {mensagem && <p className={styles.message}>{mensagem}</p>}
-      <div className={styles.contentGrid}>
-        {conteudos.length > 0 ? (
-          conteudos.map((conteudo) => (
-            <div key={conteudo.id} className={styles.contentCard}>
-              <h2 className={styles.cardTitle}>{conteudo.titulo}</h2>
-              <p className={styles.cardDescription}>{conteudo.descricao}</p>
-              <div className={styles.cardFooter}>
-                <span className={styles.cardFooterText}>
-                  {conteudos.length} card{conteudos.length !== 1 ? "s" : ""}{" "}
-                  adicionados
-                </span>
-              </div>
-              {/* Botões de Editar e Excluir */}
-              <div className={styles.cardActions}>
-                <button
-                  onClick={() => handleEdit(conteudo.id)}
-                  className={styles.cardEditButton} 
-                >
-                  Editar
-                </button>
-                <button
-                  onClick={() => handleDelete(conteudo.id)}
-                  className={styles.cardDeleteButton}
-                >
-                  Excluir
-                </button>
-              </div>
+    <div className={styles.pageContainer}>
+      {/* Coluna de conteúdos */}
+      <div className={styles.contentSidebar}>
+        <div>
+          <a href="/registerContent/" className={styles.addContentButton}>
+            Cadastrar novo conteúdo
+          </a>
+        </div>
+        <div className={styles.contentContainer}>
+          <h1 className={styles.contentTitle}>Conteúdos</h1>
+          {conteudos.map((conteudo) => (
+            <button
+              key={conteudo.id}
+              onClick={() => handleSelect(conteudo)}
+              className={`${styles.contentButton} ${
+                conteudoSelecionado?.id === conteudo.id
+                  ? styles.activeButton
+                  : ""
+              }`}
+            >
+              {conteudo.titulo}
+            </button>
+          ))}
+        </div>
+      </div>
+
+      {/* Área de exibição do conteúdo selecionado */}
+      <div className={styles.contentDisplay}>
+        {conteudoSelecionado ? (
+          <div className={styles.selectedContent}>
+            <h2>{conteudoSelecionado.titulo}</h2>
+            <p>{conteudoSelecionado.descricao}</p>
+            <div className={styles.actionButtons}>
+              <button
+                onClick={() => handleEdit(conteudoSelecionado.id)}
+                className={styles.editButton}
+              >
+                Editar
+              </button>
+              <button
+                onClick={() => handleDelete(conteudoSelecionado.id)}
+                className={styles.deleteButton}
+              >
+                Excluir
+              </button>
             </div>
-          ))
+          </div>
         ) : (
-          <p className={styles.noContent}>Nenhum conteúdo encontrado.</p>
+          <p className={styles.noContentSelected}>
+            Selecione um conteúdo para visualizá-lo aqui.
+          </p>
         )}
       </div>
     </div>

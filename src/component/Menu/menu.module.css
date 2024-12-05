@@ -11,7 +11,7 @@
     height: 550px;
     background-color: rgba(4, 96, 217, 0.80);
     padding: 15px 10px;
-    position: relative; /* Para posicionar a barra ativa */
+    position: relative /* Para posicionar a barra ativa */
   }
   
   .buttons {
