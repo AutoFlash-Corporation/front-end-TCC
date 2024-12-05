@@ -120,8 +120,8 @@ const FlashcardList = () => {
     <div className={styles.pageContainer}>
       <div className={styles.contentSidebar}>
         <div>
-          <a href="/registerContent/" className={styles.addFlashcardButton}>
-            Cadastrar novo conteúdo
+          <a href="/registerFlashcard/" className={styles.addFlashcardButton}>
+            Cadastrar novo 
           </a>
           <button onClick={fetchTodosFlashcards} className={styles.listAllButton}>
             Listar todos

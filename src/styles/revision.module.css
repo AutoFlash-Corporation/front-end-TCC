@@ -1,0 +1,191 @@
+.pageContainer {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    min-height: 100vh;
+    font-family: "Montserrat", sans-serif;
+  }
+  
+  /* Menu */
+  .menu {
+    flex: 0 0 250px;
+    background-color: #203562;
+    height: 100vh;
+  }
+  
+  /* Conteúdo principal */
+  .contentContainer {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    margin-left: 305px;
+    margin-top: 50px;
+  }
+  
+  /* Caixa de confirmação inicial */
+  .confirmationBox {
+    text-align: center;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .confirmationBox h3 {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  .confirmationButtons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  .startButton,
+  .cancelButton {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .cancelButton {
+    background-color: #f44336;
+  }
+  
+  .startButton:hover {
+    background-color: #218838;
+  }
+  
+  .cancelButton:hover {
+    background-color: #d32f2f;
+  }
+  
+  /* Blocos de pergunta e resposta */
+  .questionBox,
+  .answerBox {
+    width: 100%;
+    max-width: 800px;
+    background-color: #ffffff;
+    border: 1px solid #d3d3d3;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boxTitle {
+    font-size: 16px;
+    color: #5f5f5f;
+    margin-bottom: 10px;
+  }
+  
+  .content {
+    font-size: 14px;
+    color: #333333;
+    line-height: 1.6;
+  }
+  
+  /* Botão para mostrar resposta */
+  .showAnswerButton {
+    display: block;
+    margin: 20px auto 0;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .showAnswerButton:hover {
+    background-color: #218838;
+  }
+  
+  /* Botões de feedback */
+  .feedbackButtons {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 800px;
+  }
+  
+  .feedbackButtons button {
+    flex: 1;
+    margin: 5px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: transform 0.2s ease;
+  }
+  
+  .feedbackButtons button:hover {
+    transform: scale(1.05);
+  }
+  
+  .errorButton {
+    background-color: #f44336;
+    color: white;
+  }
+  
+  .difficultButton {
+    background-color: #ffa726;
+    color: white;
+  }
+  
+  .goodButton {
+    background-color: #4caf50;
+    color: white;
+  }
+  
+  .easyButton {
+    background-color: #2196f3;
+    color: white;
+  }
+  
+  /* Botão para mostrar a pergunta novamente */
+  .showQuestionButton {
+    display: block;
+    margin: 20px auto;
+    background-color: #203562;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .showQuestionButton:hover {
+    background-color: #162a49;
+  }
+  
+  .selectConteudo {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    font-size: 16px;
+  }
+  
+  .errorMessage {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+  }
+  
