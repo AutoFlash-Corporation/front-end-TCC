@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import Cookies from "js-cookie";
-import Menu from "@/component/Menu/Menu";
-import style from "@/styles/home.module.css";
-import MyCalendar from "@/component/Calendar/Calendar";
+import Menu from "../component/Menu/Menu";
+import style from "../styles/home.module.css";
+import MyCalendar from "../component/Calendar/Calendar";
 import ShowBox from "../component/ShowBox/ShowBox";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoPersonAdd } from "react-icons/io5";

@@ -1,10 +1,9 @@
 import React, { useState } from "react";
-import Menu from "@/component/Menu/Menu";
+import Menu from "../component/Menu/Menu";
 import SearchBar from "../component/SearchBar/SearchBar"; // Importando a barra de pesquisa
-import style from "@/styles/home.module.css";
-import MyCalendar from "@/component/Calendar/Calendar";
-import Logo from "@/component/Logo/Logo";
-import ShowBox from "@/component/ShowBox";
+import style from "../styles/relatorios.module.css";
+import MyCalendar from "../component/MyCalendar/MyCalendar";
+import ShowBox from "../component/ShowBox/ShowBox";
 import { FaPeopleGroup } from "react-icons/fa6";
 import { IoPersonAdd } from "react-icons/io5";
 import { IoWallet } from "react-icons/io5";
